@@ -68,8 +68,8 @@ all: main-build
 main-build: pNav32.elf secondary-outputs
 
 # Tool invocations
-pNav32.elf pNav32.map: $(OBJS) $(USER_OBJS) /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32/STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "pNav32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32/STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pNav32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+pNav32.elf pNav32.map: $(OBJS) $(USER_OBJS) /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/Firmware/STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "pNav32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/Firmware/STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pNav32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
