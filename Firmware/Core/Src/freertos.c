@@ -52,7 +52,7 @@ osThreadId_t blink01Handle;
 const osThreadAttr_t blink01_attributes = {
   .name = "blink01",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for blink02 */
 osThreadId_t blink02Handle;
@@ -60,6 +60,13 @@ const osThreadAttr_t blink02_attributes = {
   .name = "blink02",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,6 +76,7 @@ const osThreadAttr_t blink02_attributes = {
 
 void StartBlink01(void *argument);
 void StartBlink02(void *argument);
+void StartDefaultTask(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -106,6 +114,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of blink02 */
   blink02Handle = osThreadNew(StartBlink02, NULL, &blink02_attributes);
 
+  /* creation of defaultTask */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -130,8 +141,8 @@ void StartBlink01(void *argument)
   /* USER CODE BEGIN StartBlink01 */
   /* Infinite loop */
   for(;;)
-  {   HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
-  	  osDelay(500);
+  {   HAL_GPIO_TogglePin(O_LED_D2_GPIO_Port, O_LED_D2_Pin);
+  	  osDelay(100);
   }
   // In case we accidentally exit from task loop
   osThreadTerminate(NULL);
@@ -151,13 +162,31 @@ void StartBlink02(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+	    HAL_GPIO_TogglePin(O_LED_D3_GPIO_Port, O_LED_D3_Pin);
 	    osDelay(600);
   }
 
   // In case we accidentally exit from task loop
   osThreadTerminate(NULL);
   /* USER CODE END StartBlink02 */
+}
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+* @brief Function implementing the defaultTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN StartDefaultTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartDefaultTask */
 }
 
 /* Private application code --------------------------------------------------*/
