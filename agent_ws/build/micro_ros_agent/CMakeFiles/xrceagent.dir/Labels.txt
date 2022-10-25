@@ -1,0 +1,13 @@
+# Target labels
+ xrceagent
+# Source files and their labels
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/CMakeFiles/xrceagent
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/CMakeFiles/xrceagent.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/CMakeFiles/xrceagent-complete.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-build.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-configure.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-download.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-install.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-mkdir.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-patch.rule
+/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-update.rule

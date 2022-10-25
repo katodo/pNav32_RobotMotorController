@@ -1,0 +1,1391 @@
+[0.000000] (-) TimerEvent: {}
+[0.001109] (-) JobUnselected: {'identifier': 'micro_ros_setup'}
+[0.001174] (micro_ros_msgs) JobQueued: {'identifier': 'micro_ros_msgs', 'dependencies': OrderedDict()}
+[0.001209] (micro_ros_agent) JobQueued: {'identifier': 'micro_ros_agent', 'dependencies': OrderedDict([('micro_ros_msgs', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs')])}
+[0.002149] (micro_ros_msgs) JobStarted: {'identifier': 'micro_ros_msgs'}
+[0.019288] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'cmake'}
+[0.019658] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src/uros/micro_ros_msgs', '-DUAGENT_BUILD_EXECUTABLE=OFF', '-DUAGENT_P2P_PROFILE=OFF', '--no-warn-unused-cli', '-DCMAKE_INSTALL_PREFIX=/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[0.029806] (micro_ros_msgs) StdoutLine: {'line': b'Not searching for unused variables given on the command line.\n'}
+[0.077127] (micro_ros_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[0.097855] (-) TimerEvent: {}
+[0.134142] (micro_ros_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[0.141997] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.197975] (-) TimerEvent: {}
+[0.206296] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.215874] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.216223] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.216721] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.220330] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.294933] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.298044] (-) TimerEvent: {}
+[0.304985] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.305348] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.305936] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.307985] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.398165] (-) TimerEvent: {}
+[0.498522] (-) TimerEvent: {}
+[0.501264] (micro_ros_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[0.598695] (-) TimerEvent: {}
+[0.624985] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.632251] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.641832] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.698767] (-) TimerEvent: {}
+[0.706475] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.761329] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.798888] (-) TimerEvent: {}
+[0.899176] (-) TimerEvent: {}
+[0.999471] (-) TimerEvent: {}
+[1.096675] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.099576] (-) TimerEvent: {}
+[1.199855] (-) TimerEvent: {}
+[1.300168] (-) TimerEvent: {}
+[1.335600] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.400293] (-) TimerEvent: {}
+[1.500610] (-) TimerEvent: {}
+[1.600949] (-) TimerEvent: {}
+[1.645906] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.676598] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.6", minimum required is "3.6") \n'}
+[1.679906] (micro_ros_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.701070] (-) TimerEvent: {}
+[1.720028] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.6", minimum required is "3.5") \n'}
+[1.720448] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.720575] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.720698] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.745427] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.796326] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.801138] (-) TimerEvent: {}
+[1.804651] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.809075] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.816850] (micro_ros_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.860136] (micro_ros_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.863368] (micro_ros_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs\n'}
+[1.871164] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[1.871839] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'build'}
+[1.872695] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs', '--', '-j4', '-l4'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[1.901259] (-) TimerEvent: {}
+[1.914046] (micro_ros_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.925963] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.933550] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_copy_micro_ros_msgs\n'}
+[2.001378] (-) TimerEvent: {}
+[2.101760] (-) TimerEvent: {}
+[2.202059] (-) TimerEvent: {}
+[2.302419] (-) TimerEvent: {}
+[2.327844] (micro_ros_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.328567] (micro_ros_msgs) StdoutLine: {'line': b'creating micro_ros_msgs.egg-info\n'}
+[2.328794] (micro_ros_msgs) StdoutLine: {'line': b'writing micro_ros_msgs.egg-info/PKG-INFO\n'}
+[2.328985] (micro_ros_msgs) StdoutLine: {'line': b'writing dependency_links to micro_ros_msgs.egg-info/dependency_links.txt\n'}
+[2.329186] (micro_ros_msgs) StdoutLine: {'line': b'writing top-level names to micro_ros_msgs.egg-info/top_level.txt\n'}
+[2.329518] (micro_ros_msgs) StdoutLine: {'line': b"writing manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[2.332541] (micro_ros_msgs) StdoutLine: {'line': b"reading manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[2.333164] (micro_ros_msgs) StdoutLine: {'line': b"writing manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[2.364437] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_build_micro_ros_msgs_egg\n'}
+[2.402546] (-) TimerEvent: {}
+[2.450078] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target micro_ros_msgs__cpp\n'}
+[2.466087] (micro_ros_msgs) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.468059] (micro_ros_msgs) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.468267] (micro_ros_msgs) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.482484] (micro_ros_msgs) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/graph__functions.c.o\x1b[0m\n'}
+[2.502632] (-) TimerEvent: {}
+[2.564609] (micro_ros_msgs) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/node__functions.c.o\x1b[0m\n'}
+[2.602814] (-) TimerEvent: {}
+[2.621685] (micro_ros_msgs) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/entity__functions.c.o\x1b[0m\n'}
+[2.677379] (micro_ros_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32m\x1b[1mLinking C shared library libmicro_ros_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[2.702910] (-) TimerEvent: {}
+[2.724527] (micro_ros_msgs) StdoutLine: {'line': b'[ 19%] Built target micro_ros_msgs__rosidl_generator_c\n'}
+[2.736866] (micro_ros_msgs) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.803003] (-) TimerEvent: {}
+[2.868369] (micro_ros_msgs) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/graph__type_support.cpp.o\x1b[0m\n'}
+[2.903103] (-) TimerEvent: {}
+[2.987915] (micro_ros_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/graph__type_support.cpp.o\x1b[0m\n'}
+[2.996855] (micro_ros_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/graph__type_support.cpp.o\x1b[0m\n'}
+[3.003208] (-) TimerEvent: {}
+[3.103573] (-) TimerEvent: {}
+[3.204317] (-) TimerEvent: {}
+[3.305261] (-) TimerEvent: {}
+[3.334497] (micro_ros_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/node__type_support.cpp.o\x1b[0m\n'}
+[3.353074] (micro_ros_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/graph__type_support_c.cpp.o\x1b[0m\n'}
+[3.405367] (-) TimerEvent: {}
+[3.505669] (-) TimerEvent: {}
+[3.608572] (-) TimerEvent: {}
+[3.708883] (-) TimerEvent: {}
+[3.754814] (micro_ros_msgs) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/node__type_support.cpp.o\x1b[0m\n'}
+[3.760072] (micro_ros_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/entity__type_support.cpp.o\x1b[0m\n'}
+[3.809007] (-) TimerEvent: {}
+[3.812885] (micro_ros_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/node__type_support.cpp.o\x1b[0m\n'}
+[3.870148] (micro_ros_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/node__type_support_c.cpp.o\x1b[0m\n'}
+[3.909118] (-) TimerEvent: {}
+[4.009522] (-) TimerEvent: {}
+[4.109838] (-) TimerEvent: {}
+[4.162386] (micro_ros_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.206198] (micro_ros_msgs) StdoutLine: {'line': b'[ 42%] Built target micro_ros_msgs__rosidl_typesupport_cpp\n'}
+[4.209949] (-) TimerEvent: {}
+[4.216050] (micro_ros_msgs) StdoutLine: {'line': b'[ 44%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.310055] (-) TimerEvent: {}
+[4.323500] (micro_ros_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/entity__type_support_c.cpp.o\x1b[0m\n'}
+[4.403524] (micro_ros_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/entity__type_support.cpp.o\x1b[0m\n'}
+[4.410150] (-) TimerEvent: {}
+[4.416419] (micro_ros_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/entity__type_support.cpp.o\x1b[0m\n'}
+[4.510255] (-) TimerEvent: {}
+[4.614936] (-) TimerEvent: {}
+[4.715334] (-) TimerEvent: {}
+[4.801441] (micro_ros_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[4.815401] (-) TimerEvent: {}
+[4.832103] (micro_ros_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/graph__type_support.c.o\x1b[0m\n'}
+[4.906409] (micro_ros_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/node__type_support.c.o\x1b[0m\n'}
+[4.915505] (-) TimerEvent: {}
+[4.954153] (micro_ros_msgs) StdoutLine: {'line': b'[ 57%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c\n'}
+[4.964119] (micro_ros_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/entity__type_support.c.o\x1b[0m\n'}
+[4.969123] (micro_ros_msgs) StdoutLine: {'line': b'[ 61%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.007637] (micro_ros_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking C shared library libmicro_ros_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[5.008655] (micro_ros_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[5.015602] (-) TimerEvent: {}
+[5.066575] (micro_ros_msgs) StdoutLine: {'line': b'[ 65%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c\n'}
+[5.080779] (micro_ros_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[5.111994] (micro_ros_msgs) StdoutLine: {'line': b'[ 68%] Built target micro_ros_msgs__rosidl_typesupport_introspection_cpp\n'}
+[5.115887] (-) TimerEvent: {}
+[5.173198] (micro_ros_msgs) StdoutLine: {'line': b'[ 68%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[5.215973] (-) TimerEvent: {}
+[5.316243] (-) TimerEvent: {}
+[5.365804] (micro_ros_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/graph__type_support.cpp.o\x1b[0m\n'}
+[5.366023] (micro_ros_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/node__type_support.cpp.o\x1b[0m\n'}
+[5.366131] (micro_ros_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/entity__type_support.cpp.o\x1b[0m\n'}
+[5.398047] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.416357] (-) TimerEvent: {}
+[5.438632] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs__rosidl_typesupport_c\n'}
+[5.457532] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs\n'}
+[5.476377] (micro_ros_msgs) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[5.516464] (-) TimerEvent: {}
+[5.616761] (-) TimerEvent: {}
+[5.717040] (-) TimerEvent: {}
+[5.817321] (-) TimerEvent: {}
+[5.917594] (-) TimerEvent: {}
+[6.017871] (-) TimerEvent: {}
+[6.118150] (-) TimerEvent: {}
+[6.218451] (-) TimerEvent: {}
+[6.229635] (micro_ros_msgs) StdoutLine: {'line': b'[ 78%] Built target micro_ros_msgs__py\n'}
+[6.250445] (micro_ros_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_node_s.c.o\x1b[0m\n'}
+[6.250673] (micro_ros_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_graph_s.c.o\x1b[0m\n'}
+[6.250785] (micro_ros_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_entity_s.c.o\x1b[0m\n'}
+[6.318565] (-) TimerEvent: {}
+[6.398832] (micro_ros_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/libmicro_ros_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[6.418736] (-) TimerEvent: {}
+[6.439521] (micro_ros_msgs) StdoutLine: {'line': b'[ 87%] Built target micro_ros_msgs__rosidl_generator_py\n'}
+[6.459034] (micro_ros_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[6.459302] (micro_ros_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[6.462279] (micro_ros_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[6.518874] (-) TimerEvent: {}
+[6.574457] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.574685] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.574797] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.607314] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_c__pyext\n'}
+[6.607546] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[6.607695] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.618133] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[6.618899] (-) TimerEvent: {}
+[6.695614] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'install'}
+[6.704091] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_msgs'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[6.711955] (micro_ros_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.712484] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/ament_index/resource_index/rosidl_interfaces/micro_ros_msgs\n'}
+[6.712779] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.713342] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.713535] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.713682] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__functions.h\n'}
+[6.713854] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__functions.c\n'}
+[6.714015] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__functions.h\n'}
+[6.714144] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__functions.h\n'}
+[6.714257] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__functions.c\n'}
+[6.714369] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__struct.h\n'}
+[6.714484] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.h\n'}
+[6.714596] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.h\n'}
+[6.714749] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__functions.c\n'}
+[6.714915] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__struct.h\n'}
+[6.715033] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__struct.h\n'}
+[6.715136] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.h\n'}
+[6.715268] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/graph.h\n'}
+[6.715370] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/node.h\n'}
+[6.715489] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[6.715605] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/entity.h\n'}
+[6.715701] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/library_path.sh\n'}
+[6.715812] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/library_path.dsv\n'}
+[6.715909] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_c.so\n'}
+[6.716327] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_c.so" to ""\n'}
+[6.716461] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.716594] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.716709] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.716825] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_fastrtps_c.h\n'}
+[6.716946] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_fastrtps_c.h\n'}
+[6.717070] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_fastrtps_c.h\n'}
+[6.717166] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.717261] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[6.717439] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[6.717570] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.717711] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.717827] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.717941] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.718054] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.c\n'}
+[6.718168] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.c\n'}
+[6.718287] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_introspection_c.h\n'}
+[6.718402] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_introspection_c.h\n'}
+[6.718518] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_introspection_c.h\n'}
+[6.718614] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.c\n'}
+[6.718754] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_c.so\n'}
+[6.718889] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[6.719010] (-) TimerEvent: {}
+[6.719129] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_c.so\n'}
+[6.719308] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_c.so" to ""\n'}
+[6.719460] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.719574] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.719689] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.719802] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__traits.hpp\n'}
+[6.719916] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__builder.hpp\n'}
+[6.720030] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__builder.hpp\n'}
+[6.720144] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__traits.hpp\n'}
+[6.720257] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__builder.hpp\n'}
+[6.720370] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__traits.hpp\n'}
+[6.720484] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__struct.hpp\n'}
+[6.720625] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__struct.hpp\n'}
+[6.720739] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__struct.hpp\n'}
+[6.720835] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/entity.hpp\n'}
+[6.720962] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/node.hpp\n'}
+[6.721110] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/graph.hpp\n'}
+[6.721226] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.721343] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.721459] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.721555] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.721668] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/dds_fastrtps\n'}
+[6.721764] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.721859] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.721954] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.722050] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.722166] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[6.722322] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[6.722419] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[6.722532] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[6.722646] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.722780] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.722925] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.cpp\n'}
+[6.723039] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.cpp\n'}
+[6.723191] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.723290] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.cpp\n'}
+[6.723388] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[6.723712] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[6.723886] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_cpp.so\n'}
+[6.724167] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[6.724286] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/pythonpath.sh\n'}
+[6.724400] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/pythonpath.dsv\n'}
+[6.724526] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-1.0.0-py3.10.egg-info\n'}
+[6.725074] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-1.0.0-py3.10.egg-info/top_level.txt\n'}
+[6.725199] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-1.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[6.725310] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-1.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[6.725424] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-1.0.0-py3.10.egg-info/PKG-INFO\n'}
+[6.725564] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs\n'}
+[6.725679] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.725849] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.725983] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.726111] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.726226] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/libmicro_ros_msgs__rosidl_generator_py.so\n'}
+[6.726349] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.726472] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg\n'}
+[6.726590] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity.py\n'}
+[6.726710] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node.py\n'}
+[6.726826] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity_s.c\n'}
+[6.726940] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph.py\n'}
+[6.727054] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/__init__.py\n'}
+[6.727167] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node_s.c\n'}
+[6.727281] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph_s.c\n'}
+[6.727394] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[6.727516] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/__init__.py\n'}
+[6.767218] (micro_ros_msgs) StdoutLine: {'line': b"Listing '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs'...\n"}
+[6.767418] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/__init__.py'...\n"}
+[6.767518] (micro_ros_msgs) StdoutLine: {'line': b"Listing '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg'...\n"}
+[6.767613] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/__init__.py'...\n"}
+[6.767719] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity.py'...\n"}
+[6.767820] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph.py'...\n"}
+[6.767914] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node.py'...\n"}
+[6.772378] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.772703] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.772954] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.773371] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.773599] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.774039] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.774209] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_py.so\n'}
+[6.774491] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_py.so" to ""\n'}
+[6.774628] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Graph.idl\n'}
+[6.774857] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Node.idl\n'}
+[6.775084] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Entity.idl\n'}
+[6.775322] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Graph.msg\n'}
+[6.775454] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Node.msg\n'}
+[6.775566] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Entity.msg\n'}
+[6.775686] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/ament_index/resource_index/package_run_dependencies/micro_ros_msgs\n'}
+[6.775842] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/ament_index/resource_index/parent_prefix_path/micro_ros_msgs\n'}
+[6.775976] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/ament_prefix_path.sh\n'}
+[6.776101] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/ament_prefix_path.dsv\n'}
+[6.776227] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/path.sh\n'}
+[6.776364] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/path.dsv\n'}
+[6.776506] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.bash\n'}
+[6.776655] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.sh\n'}
+[6.776847] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.zsh\n'}
+[6.777013] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.dsv\n'}
+[6.777139] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.dsv\n'}
+[6.777288] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/ament_index/resource_index/packages/micro_ros_msgs\n'}
+[6.777496] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cExport.cmake\n'}
+[6.777649] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.777831] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.778015] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.778141] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.778292] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.778456] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cExport.cmake\n'}
+[6.778610] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.778816] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cppExport.cmake\n'}
+[6.778981] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.779161] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.779307] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.779565] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.779741] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[6.779918] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.780101] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_pyExport.cmake\n'}
+[6.780228] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.780360] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[6.780512] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.780667] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.780813] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.780962] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.781123] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.781258] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[6.781413] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgsConfig.cmake\n'}
+[6.781534] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgsConfig-version.cmake\n'}
+[6.781670] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.xml\n'}
+[6.784093] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[6.819128] (-) TimerEvent: {}
+[6.920514] (-) TimerEvent: {}
+[6.938506] (micro_ros_msgs) JobEnded: {'identifier': 'micro_ros_msgs', 'rc': 0}
+[6.940792] (micro_ros_agent) JobStarted: {'identifier': 'micro_ros_agent'}
+[6.949991] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'cmake'}
+[6.950383] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src/uros/micro-ROS-Agent/micro_ros_agent', '-DUAGENT_BUILD_EXECUTABLE=OFF', '-DUAGENT_P2P_PROFILE=OFF', '--no-warn-unused-cli', '-DCMAKE_INSTALL_PREFIX=/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[6.957554] (micro_ros_agent) StdoutLine: {'line': b'Not searching for unused variables given on the command line.\n'}
+[7.013432] (micro_ros_agent) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[7.020607] (-) TimerEvent: {}
+[7.021002] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[7.087738] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[7.097265] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[7.097618] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[7.098106] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[7.120763] (-) TimerEvent: {}
+[7.151490] (micro_ros_agent) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[7.162280] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[7.220872] (-) TimerEvent: {}
+[7.245503] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.256183] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.256509] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.257155] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.301374] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[7.305583] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[7.306418] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent\n'}
+[7.310587] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[7.311312] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'build'}
+[7.312220] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent', '--', '-j4', '-l4'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[7.321005] (-) TimerEvent: {}
+[7.356276] (micro_ros_agent) StdoutLine: {'line': b"[  6%] \x1b[34m\x1b[1mCreating directories for 'xrceagent'\x1b[0m\n"}
+[7.421126] (-) TimerEvent: {}
+[7.422318] (micro_ros_agent) StdoutLine: {'line': b"[ 12%] \x1b[34m\x1b[1mPerforming download step (git clone) for 'xrceagent'\x1b[0m\n"}
+[7.440793] (micro_ros_agent) StderrLine: {'line': b"Clone in 'xrceagent' in corso...\n"}
+[7.521269] (-) TimerEvent: {}
+[7.621632] (-) TimerEvent: {}
+[7.722093] (-) TimerEvent: {}
+[7.822447] (-) TimerEvent: {}
+[7.922776] (-) TimerEvent: {}
+[8.023114] (-) TimerEvent: {}
+[8.123453] (-) TimerEvent: {}
+[8.223804] (-) TimerEvent: {}
+[8.324265] (-) TimerEvent: {}
+[8.424607] (-) TimerEvent: {}
+[8.525054] (-) TimerEvent: {}
+[8.625511] (-) TimerEvent: {}
+[8.725906] (-) TimerEvent: {}
+[8.826243] (-) TimerEvent: {}
+[8.926574] (-) TimerEvent: {}
+[9.026922] (-) TimerEvent: {}
+[9.127339] (-) TimerEvent: {}
+[9.227787] (-) TimerEvent: {}
+[9.328235] (-) TimerEvent: {}
+[9.428706] (-) TimerEvent: {}
+[9.529159] (-) TimerEvent: {}
+[9.629599] (-) TimerEvent: {}
+[9.730043] (-) TimerEvent: {}
+[9.830483] (-) TimerEvent: {}
+[9.930909] (-) TimerEvent: {}
+[10.031328] (-) TimerEvent: {}
+[10.131777] (-) TimerEvent: {}
+[10.232239] (-) TimerEvent: {}
+[10.332703] (-) TimerEvent: {}
+[10.433159] (-) TimerEvent: {}
+[10.533639] (-) TimerEvent: {}
+[10.634083] (-) TimerEvent: {}
+[10.734542] (-) TimerEvent: {}
+[10.835010] (-) TimerEvent: {}
+[10.935469] (-) TimerEvent: {}
+[11.035980] (-) TimerEvent: {}
+[11.136336] (-) TimerEvent: {}
+[11.236741] (-) TimerEvent: {}
+[11.337094] (-) TimerEvent: {}
+[11.437442] (-) TimerEvent: {}
+[11.537783] (-) TimerEvent: {}
+[11.638127] (-) TimerEvent: {}
+[11.738455] (-) TimerEvent: {}
+[11.838760] (-) TimerEvent: {}
+[11.939175] (-) TimerEvent: {}
+[12.039602] (-) TimerEvent: {}
+[12.140045] (-) TimerEvent: {}
+[12.240463] (-) TimerEvent: {}
+[12.340886] (-) TimerEvent: {}
+[12.441265] (-) TimerEvent: {}
+[12.541712] (-) TimerEvent: {}
+[12.642164] (-) TimerEvent: {}
+[12.742617] (-) TimerEvent: {}
+[12.843086] (-) TimerEvent: {}
+[12.943554] (-) TimerEvent: {}
+[13.044004] (-) TimerEvent: {}
+[13.144435] (-) TimerEvent: {}
+[13.244902] (-) TimerEvent: {}
+[13.345357] (-) TimerEvent: {}
+[13.445811] (-) TimerEvent: {}
+[13.546199] (-) TimerEvent: {}
+[13.646644] (-) TimerEvent: {}
+[13.747123] (-) TimerEvent: {}
+[13.847563] (-) TimerEvent: {}
+[13.947990] (-) TimerEvent: {}
+[14.048450] (-) TimerEvent: {}
+[14.148900] (-) TimerEvent: {}
+[14.249344] (-) TimerEvent: {}
+[14.349821] (-) TimerEvent: {}
+[14.450261] (-) TimerEvent: {}
+[14.550694] (-) TimerEvent: {}
+[14.651138] (-) TimerEvent: {}
+[14.751563] (-) TimerEvent: {}
+[14.851985] (-) TimerEvent: {}
+[14.952406] (-) TimerEvent: {}
+[15.052820] (-) TimerEvent: {}
+[15.153308] (-) TimerEvent: {}
+[15.253738] (-) TimerEvent: {}
+[15.354209] (-) TimerEvent: {}
+[15.454618] (-) TimerEvent: {}
+[15.555057] (-) TimerEvent: {}
+[15.655485] (-) TimerEvent: {}
+[15.755904] (-) TimerEvent: {}
+[15.856310] (-) TimerEvent: {}
+[15.956737] (-) TimerEvent: {}
+[16.057201] (-) TimerEvent: {}
+[16.157643] (-) TimerEvent: {}
+[16.197370] (micro_ros_agent) StderrLine: {'line': b"Si \xc3\xa8 passati a un nuovo branch 'ros2'\n"}
+[16.197669] (micro_ros_agent) StdoutLine: {'line': b"Branch 'ros2' impostato per tracciare il branch remoto 'ros2' da 'origin'.\n"}
+[16.245482] (micro_ros_agent) StdoutLine: {'line': b"[ 18%] \x1b[34m\x1b[1mPerforming update step for 'xrceagent'\x1b[0m\n"}
+[16.257755] (-) TimerEvent: {}
+[16.358121] (-) TimerEvent: {}
+[16.458475] (-) TimerEvent: {}
+[16.558903] (-) TimerEvent: {}
+[16.659320] (-) TimerEvent: {}
+[16.759742] (-) TimerEvent: {}
+[16.860153] (-) TimerEvent: {}
+[16.960435] (-) TimerEvent: {}
+[16.976116] (micro_ros_agent) StderrLine: {'line': b'HEAD si trova ora a a0bc8c7 Bump version\n'}
+[17.009618] (micro_ros_agent) StdoutLine: {'line': b"[ 25%] \x1b[34m\x1b[1mNo patch step for 'xrceagent'\x1b[0m\n"}
+[17.036255] (micro_ros_agent) StdoutLine: {'line': b"[ 31%] \x1b[34m\x1b[1mPerforming configure step for 'xrceagent'\x1b[0m\n"}
+[17.045320] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/tmp/xrceagent-cache-.cmake\n'}
+[17.060545] (-) TimerEvent: {}
+[17.103469] (micro_ros_agent) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[17.111936] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[17.160676] (-) TimerEvent: {}
+[17.179278] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[17.189855] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[17.190245] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[17.190762] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[17.243590] (micro_ros_agent) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[17.250551] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[17.260767] (-) TimerEvent: {}
+[17.326875] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[17.337095] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[17.337476] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[17.338079] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[17.346878] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[17.360884] (-) TimerEvent: {}
+[17.416594] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[17.416900] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[17.461017] (-) TimerEvent: {}
+[17.485411] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[17.486437] (micro_ros_agent) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[17.500677] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[17.503530] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[17.504298] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-build\n'}
+[17.522268] (micro_ros_agent) StdoutLine: {'line': b"[ 37%] \x1b[34m\x1b[1mPerforming build step for 'xrceagent'\x1b[0m\n"}
+[17.558303] (micro_ros_agent) StdoutLine: {'line': b"[ 12%] \x1b[34m\x1b[1mCreating directories for 'uagent'\x1b[0m\n"}
+[17.561101] (-) TimerEvent: {}
+[17.622621] (micro_ros_agent) StdoutLine: {'line': b"[ 25%] \x1b[34m\x1b[1mNo download step for 'uagent'\x1b[0m\n"}
+[17.644252] (micro_ros_agent) StdoutLine: {'line': b"[ 37%] \x1b[34m\x1b[1mNo update step for 'uagent'\x1b[0m\n"}
+[17.661225] (-) TimerEvent: {}
+[17.665864] (micro_ros_agent) StdoutLine: {'line': b"[ 50%] \x1b[34m\x1b[1mNo patch step for 'uagent'\x1b[0m\n"}
+[17.687515] (micro_ros_agent) StdoutLine: {'line': b"[ 62%] \x1b[34m\x1b[1mPerforming configure step for 'uagent'\x1b[0m\n"}
+[17.695984] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-build/uagent-prefix/tmp/uagent-cache-.cmake\n'}
+[17.701996] (micro_ros_agent) StdoutLine: {'line': b"-- Setting build type to 'Release' as none was specified.\n"}
+[17.734015] (micro_ros_agent) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):\n'}
+[17.734199] (micro_ros_agent) StderrLine: {'line': b'  The package name passed to `find_package_handle_standard_args` (tinyxml2)\n'}
+[17.734295] (micro_ros_agent) StderrLine: {'line': b'  does not match the name of the calling package (TinyXML2).  This can lead\n'}
+[17.734387] (micro_ros_agent) StderrLine: {'line': b'  to problems in calling code that expects `find_package` result variables\n'}
+[17.734477] (micro_ros_agent) StderrLine: {'line': b'  (e.g., `_FOUND`) to follow a certain pattern.\n'}
+[17.734565] (micro_ros_agent) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[17.734690] (micro_ros_agent) StderrLine: {'line': b'  cmake/modules/FindTinyXML2.cmake:40 (find_package_handle_standard_args)\n'}
+[17.734792] (micro_ros_agent) StderrLine: {'line': b'  /opt/ros/humble/share/fastrtps/cmake/fastrtps-config.cmake:51 (find_package)\n'}
+[17.734888] (micro_ros_agent) StderrLine: {'line': b'  CMakeLists.txt:153 (find_package)\n'}
+[17.734978] (micro_ros_agent) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[17.735068] (micro_ros_agent) StderrLine: {'line': b'\x1b[0m\n'}
+[17.735158] (micro_ros_agent) StdoutLine: {'line': b'-- Found tinyxml2: /usr/lib/x86_64-linux-gnu/libtinyxml2.so  \n'}
+[17.761351] (-) TimerEvent: {}
+[17.787733] (micro_ros_agent) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[17.800151] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[17.816872] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[17.817848] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/agent/src/xrceagent-build\n'}
+[17.836667] (micro_ros_agent) StdoutLine: {'line': b"[ 75%] \x1b[34m\x1b[1mPerforming build step for 'uagent'\x1b[0m\n"}
+[17.861474] (-) TimerEvent: {}
+[17.878198] (micro_ros_agent) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/AgentInstance.cpp.o\x1b[0m\n'}
+[17.878410] (micro_ros_agent) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Root.cpp.o\x1b[0m\n'}
+[17.878576] (micro_ros_agent) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/processor/Processor.cpp.o\x1b[0m\n'}
+[17.878716] (micro_ros_agent) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Agent.cpp.o\x1b[0m\n'}
+[17.961577] (-) TimerEvent: {}
+[18.061888] (-) TimerEvent: {}
+[18.162210] (-) TimerEvent: {}
+[18.262524] (-) TimerEvent: {}
+[18.362926] (-) TimerEvent: {}
+[18.463313] (-) TimerEvent: {}
+[18.563700] (-) TimerEvent: {}
+[18.664090] (-) TimerEvent: {}
+[18.764459] (-) TimerEvent: {}
+[18.864873] (-) TimerEvent: {}
+[18.965185] (-) TimerEvent: {}
+[19.065505] (-) TimerEvent: {}
+[19.165823] (-) TimerEvent: {}
+[19.266150] (-) TimerEvent: {}
+[19.366466] (-) TimerEvent: {}
+[19.466792] (-) TimerEvent: {}
+[19.567109] (-) TimerEvent: {}
+[19.667545] (-) TimerEvent: {}
+[19.768137] (-) TimerEvent: {}
+[19.868551] (-) TimerEvent: {}
+[19.968970] (-) TimerEvent: {}
+[20.069317] (-) TimerEvent: {}
+[20.169656] (-) TimerEvent: {}
+[20.269993] (-) TimerEvent: {}
+[20.370335] (-) TimerEvent: {}
+[20.470695] (-) TimerEvent: {}
+[20.571032] (-) TimerEvent: {}
+[20.671372] (-) TimerEvent: {}
+[20.771719] (-) TimerEvent: {}
+[20.872060] (-) TimerEvent: {}
+[20.972381] (-) TimerEvent: {}
+[21.072796] (-) TimerEvent: {}
+[21.173131] (-) TimerEvent: {}
+[21.273465] (-) TimerEvent: {}
+[21.373799] (-) TimerEvent: {}
+[21.474124] (-) TimerEvent: {}
+[21.574517] (-) TimerEvent: {}
+[21.674841] (-) TimerEvent: {}
+[21.775156] (-) TimerEvent: {}
+[21.875491] (-) TimerEvent: {}
+[21.975840] (-) TimerEvent: {}
+[22.076165] (-) TimerEvent: {}
+[22.176474] (-) TimerEvent: {}
+[22.276790] (-) TimerEvent: {}
+[22.377108] (-) TimerEvent: {}
+[22.477439] (-) TimerEvent: {}
+[22.577753] (-) TimerEvent: {}
+[22.678081] (-) TimerEvent: {}
+[22.778429] (-) TimerEvent: {}
+[22.878728] (-) TimerEvent: {}
+[22.979053] (-) TimerEvent: {}
+[23.079393] (-) TimerEvent: {}
+[23.179729] (-) TimerEvent: {}
+[23.275207] (micro_ros_agent) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/client/ProxyClient.cpp.o\x1b[0m\n'}
+[23.279833] (-) TimerEvent: {}
+[23.380353] (-) TimerEvent: {}
+[23.480739] (-) TimerEvent: {}
+[23.581146] (-) TimerEvent: {}
+[23.681645] (-) TimerEvent: {}
+[23.782057] (-) TimerEvent: {}
+[23.882461] (-) TimerEvent: {}
+[23.982884] (-) TimerEvent: {}
+[24.083300] (-) TimerEvent: {}
+[24.183706] (-) TimerEvent: {}
+[24.284102] (-) TimerEvent: {}
+[24.384514] (-) TimerEvent: {}
+[24.484933] (-) TimerEvent: {}
+[24.585349] (-) TimerEvent: {}
+[24.685773] (-) TimerEvent: {}
+[24.786198] (-) TimerEvent: {}
+[24.886625] (-) TimerEvent: {}
+[24.929740] (micro_ros_agent) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/participant/Participant.cpp.o\x1b[0m\n'}
+[24.986737] (-) TimerEvent: {}
+[25.087045] (-) TimerEvent: {}
+[25.187367] (-) TimerEvent: {}
+[25.287683] (-) TimerEvent: {}
+[25.388016] (-) TimerEvent: {}
+[25.488323] (-) TimerEvent: {}
+[25.588740] (-) TimerEvent: {}
+[25.689049] (-) TimerEvent: {}
+[25.789376] (-) TimerEvent: {}
+[25.889688] (-) TimerEvent: {}
+[25.990010] (-) TimerEvent: {}
+[26.090332] (-) TimerEvent: {}
+[26.190679] (-) TimerEvent: {}
+[26.291005] (-) TimerEvent: {}
+[26.354351] (micro_ros_agent) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/topic/Topic.cpp.o\x1b[0m\n'}
+[26.391117] (-) TimerEvent: {}
+[26.491445] (-) TimerEvent: {}
+[26.591817] (-) TimerEvent: {}
+[26.692143] (-) TimerEvent: {}
+[26.792471] (-) TimerEvent: {}
+[26.892803] (-) TimerEvent: {}
+[26.993123] (-) TimerEvent: {}
+[27.093438] (-) TimerEvent: {}
+[27.193767] (-) TimerEvent: {}
+[27.294094] (-) TimerEvent: {}
+[27.394450] (-) TimerEvent: {}
+[27.494785] (-) TimerEvent: {}
+[27.595108] (-) TimerEvent: {}
+[27.695425] (-) TimerEvent: {}
+[27.788924] (micro_ros_agent) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/publisher/Publisher.cpp.o\x1b[0m\n'}
+[27.795543] (-) TimerEvent: {}
+[27.895963] (-) TimerEvent: {}
+[27.996536] (-) TimerEvent: {}
+[28.096921] (-) TimerEvent: {}
+[28.197318] (-) TimerEvent: {}
+[28.297728] (-) TimerEvent: {}
+[28.398142] (-) TimerEvent: {}
+[28.431149] (micro_ros_agent) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/subscriber/Subscriber.cpp.o\x1b[0m\n'}
+[28.498258] (-) TimerEvent: {}
+[28.598671] (-) TimerEvent: {}
+[28.699076] (-) TimerEvent: {}
+[28.799484] (-) TimerEvent: {}
+[28.899899] (-) TimerEvent: {}
+[29.000313] (-) TimerEvent: {}
+[29.100788] (-) TimerEvent: {}
+[29.189392] (micro_ros_agent) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datawriter/DataWriter.cpp.o\x1b[0m\n'}
+[29.200908] (-) TimerEvent: {}
+[29.301234] (-) TimerEvent: {}
+[29.401567] (-) TimerEvent: {}
+[29.501888] (-) TimerEvent: {}
+[29.602212] (-) TimerEvent: {}
+[29.702539] (-) TimerEvent: {}
+[29.802873] (-) TimerEvent: {}
+[29.867262] (micro_ros_agent) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datareader/DataReader.cpp.o\x1b[0m\n'}
+[29.902982] (-) TimerEvent: {}
+[30.003403] (-) TimerEvent: {}
+[30.103832] (-) TimerEvent: {}
+[30.204161] (-) TimerEvent: {}
+[30.304493] (-) TimerEvent: {}
+[30.404818] (-) TimerEvent: {}
+[30.505158] (-) TimerEvent: {}
+[30.605493] (-) TimerEvent: {}
+[30.705823] (-) TimerEvent: {}
+[30.806167] (-) TimerEvent: {}
+[30.906508] (-) TimerEvent: {}
+[31.006848] (-) TimerEvent: {}
+[31.107168] (-) TimerEvent: {}
+[31.207584] (-) TimerEvent: {}
+[31.307905] (-) TimerEvent: {}
+[31.408250] (-) TimerEvent: {}
+[31.508582] (-) TimerEvent: {}
+[31.585608] (micro_ros_agent) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/requester/Requester.cpp.o\x1b[0m\n'}
+[31.608695] (-) TimerEvent: {}
+[31.709111] (-) TimerEvent: {}
+[31.809520] (-) TimerEvent: {}
+[31.909934] (-) TimerEvent: {}
+[32.010276] (-) TimerEvent: {}
+[32.030990] (micro_ros_agent) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/replier/Replier.cpp.o\x1b[0m\n'}
+[32.110388] (-) TimerEvent: {}
+[32.210731] (-) TimerEvent: {}
+[32.311059] (-) TimerEvent: {}
+[32.411380] (-) TimerEvent: {}
+[32.511693] (-) TimerEvent: {}
+[32.612026] (-) TimerEvent: {}
+[32.712356] (-) TimerEvent: {}
+[32.812679] (-) TimerEvent: {}
+[32.913010] (-) TimerEvent: {}
+[33.013345] (-) TimerEvent: {}
+[33.113686] (-) TimerEvent: {}
+[33.214022] (-) TimerEvent: {}
+[33.303962] (micro_ros_agent) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/object/XRCEObject.cpp.o\x1b[0m\n'}
+[33.314149] (-) TimerEvent: {}
+[33.414507] (-) TimerEvent: {}
+[33.514848] (-) TimerEvent: {}
+[33.615183] (-) TimerEvent: {}
+[33.715516] (-) TimerEvent: {}
+[33.815851] (-) TimerEvent: {}
+[33.916197] (-) TimerEvent: {}
+[33.993051] (micro_ros_agent) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/XRCETypes.cpp.o\x1b[0m\n'}
+[34.016301] (-) TimerEvent: {}
+[34.116674] (-) TimerEvent: {}
+[34.218330] (-) TimerEvent: {}
+[34.256883] (micro_ros_agent) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/MessageHeader.cpp.o\x1b[0m\n'}
+[34.318450] (-) TimerEvent: {}
+[34.418999] (-) TimerEvent: {}
+[34.519332] (-) TimerEvent: {}
+[34.619672] (-) TimerEvent: {}
+[34.720009] (-) TimerEvent: {}
+[34.820348] (-) TimerEvent: {}
+[34.862824] (micro_ros_agent) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/SubMessageHeader.cpp.o\x1b[0m\n'}
+[34.920468] (-) TimerEvent: {}
+[35.020791] (-) TimerEvent: {}
+[35.121176] (-) TimerEvent: {}
+[35.221525] (-) TimerEvent: {}
+[35.321863] (-) TimerEvent: {}
+[35.422201] (-) TimerEvent: {}
+[35.467839] (micro_ros_agent) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/InputMessage.cpp.o\x1b[0m\n'}
+[35.522324] (-) TimerEvent: {}
+[35.622743] (-) TimerEvent: {}
+[35.723072] (-) TimerEvent: {}
+[35.823407] (-) TimerEvent: {}
+[35.923739] (-) TimerEvent: {}
+[36.024071] (-) TimerEvent: {}
+[36.124412] (-) TimerEvent: {}
+[36.168407] (micro_ros_agent) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/OutputMessage.cpp.o\x1b[0m\n'}
+[36.224527] (-) TimerEvent: {}
+[36.324865] (-) TimerEvent: {}
+[36.401793] (micro_ros_agent) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/utils/ArgumentParser.cpp.o\x1b[0m\n'}
+[36.424981] (-) TimerEvent: {}
+[36.525323] (-) TimerEvent: {}
+[36.625654] (-) TimerEvent: {}
+[36.725993] (-) TimerEvent: {}
+[36.826333] (-) TimerEvent: {}
+[36.926687] (-) TimerEvent: {}
+[37.027029] (-) TimerEvent: {}
+[37.127352] (-) TimerEvent: {}
+[37.227692] (-) TimerEvent: {}
+[37.328033] (-) TimerEvent: {}
+[37.428383] (-) TimerEvent: {}
+[37.528728] (-) TimerEvent: {}
+[37.629073] (-) TimerEvent: {}
+[37.729403] (-) TimerEvent: {}
+[37.829755] (-) TimerEvent: {}
+[37.930102] (-) TimerEvent: {}
+[38.030510] (-) TimerEvent: {}
+[38.130920] (-) TimerEvent: {}
+[38.231327] (-) TimerEvent: {}
+[38.331753] (-) TimerEvent: {}
+[38.406222] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/Server.cpp.o\x1b[0m\n'}
+[38.431867] (-) TimerEvent: {}
+[38.532273] (-) TimerEvent: {}
+[38.632684] (-) TimerEvent: {}
+[38.733112] (-) TimerEvent: {}
+[38.833776] (-) TimerEvent: {}
+[38.934197] (-) TimerEvent: {}
+[39.034623] (-) TimerEvent: {}
+[39.135044] (-) TimerEvent: {}
+[39.166614] (micro_ros_agent) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/stream_framing/StreamFramingProtocol.cpp.o\x1b[0m\n'}
+[39.235154] (-) TimerEvent: {}
+[39.335570] (-) TimerEvent: {}
+[39.435988] (-) TimerEvent: {}
+[39.448397] (micro_ros_agent) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/custom/CustomAgent.cpp.o\x1b[0m\n'}
+[39.536104] (-) TimerEvent: {}
+[39.597625] (micro_ros_agent) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv4AgentLinux.cpp.o\x1b[0m\n'}
+[39.636218] (-) TimerEvent: {}
+[39.736627] (-) TimerEvent: {}
+[39.837033] (-) TimerEvent: {}
+[39.937449] (-) TimerEvent: {}
+[39.997488] (micro_ros_agent) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv6AgentLinux.cpp.o\x1b[0m\n'}
+[40.037577] (-) TimerEvent: {}
+[40.138066] (-) TimerEvent: {}
+[40.238488] (-) TimerEvent: {}
+[40.338910] (-) TimerEvent: {}
+[40.439319] (-) TimerEvent: {}
+[40.539731] (-) TimerEvent: {}
+[40.640144] (-) TimerEvent: {}
+[40.740565] (-) TimerEvent: {}
+[40.840978] (-) TimerEvent: {}
+[40.941407] (-) TimerEvent: {}
+[41.041816] (-) TimerEvent: {}
+[41.142244] (-) TimerEvent: {}
+[41.242683] (-) TimerEvent: {}
+[41.343094] (-) TimerEvent: {}
+[41.443518] (-) TimerEvent: {}
+[41.543962] (-) TimerEvent: {}
+[41.644376] (-) TimerEvent: {}
+[41.744789] (-) TimerEvent: {}
+[41.845195] (-) TimerEvent: {}
+[41.945602] (-) TimerEvent: {}
+[42.046002] (-) TimerEvent: {}
+[42.146417] (-) TimerEvent: {}
+[42.246859] (-) TimerEvent: {}
+[42.347266] (-) TimerEvent: {}
+[42.447665] (-) TimerEvent: {}
+[42.548082] (-) TimerEvent: {}
+[42.648500] (-) TimerEvent: {}
+[42.748926] (-) TimerEvent: {}
+[42.849352] (-) TimerEvent: {}
+[42.949766] (-) TimerEvent: {}
+[43.050182] (-) TimerEvent: {}
+[43.150590] (-) TimerEvent: {}
+[43.251004] (-) TimerEvent: {}
+[43.351421] (-) TimerEvent: {}
+[43.451851] (-) TimerEvent: {}
+[43.552274] (-) TimerEvent: {}
+[43.652694] (-) TimerEvent: {}
+[43.753103] (-) TimerEvent: {}
+[43.853510] (-) TimerEvent: {}
+[43.953925] (-) TimerEvent: {}
+[44.054350] (-) TimerEvent: {}
+[44.154739] (-) TimerEvent: {}
+[44.169648] (micro_ros_agent) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv4AgentLinux.cpp.o\x1b[0m\n'}
+[44.254847] (-) TimerEvent: {}
+[44.355177] (-) TimerEvent: {}
+[44.455509] (-) TimerEvent: {}
+[44.555840] (-) TimerEvent: {}
+[44.573658] (micro_ros_agent) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv6AgentLinux.cpp.o\x1b[0m\n'}
+[44.655966] (-) TimerEvent: {}
+[44.689891] (micro_ros_agent) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/SerialAgentLinux.cpp.o\x1b[0m\n'}
+[44.756078] (-) TimerEvent: {}
+[44.856406] (-) TimerEvent: {}
+[44.956815] (-) TimerEvent: {}
+[45.057219] (-) TimerEvent: {}
+[45.157631] (-) TimerEvent: {}
+[45.258161] (-) TimerEvent: {}
+[45.358540] (-) TimerEvent: {}
+[45.458860] (-) TimerEvent: {}
+[45.559174] (-) TimerEvent: {}
+[45.659488] (-) TimerEvent: {}
+[45.759803] (-) TimerEvent: {}
+[45.860159] (-) TimerEvent: {}
+[45.880949] (micro_ros_agent) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/TermiosAgentLinux.cpp.o\x1b[0m\n'}
+[45.960266] (-) TimerEvent: {}
+[46.060574] (-) TimerEvent: {}
+[46.160971] (-) TimerEvent: {}
+[46.262115] (-) TimerEvent: {}
+[46.362520] (-) TimerEvent: {}
+[46.462935] (-) TimerEvent: {}
+[46.563355] (-) TimerEvent: {}
+[46.663765] (-) TimerEvent: {}
+[46.764170] (-) TimerEvent: {}
+[46.864708] (-) TimerEvent: {}
+[46.965127] (-) TimerEvent: {}
+[47.065543] (-) TimerEvent: {}
+[47.165967] (-) TimerEvent: {}
+[47.266381] (-) TimerEvent: {}
+[47.366799] (-) TimerEvent: {}
+[47.467213] (-) TimerEvent: {}
+[47.567624] (-) TimerEvent: {}
+[47.668048] (-) TimerEvent: {}
+[47.768448] (-) TimerEvent: {}
+[47.868848] (-) TimerEvent: {}
+[47.969275] (-) TimerEvent: {}
+[48.069684] (-) TimerEvent: {}
+[48.170094] (-) TimerEvent: {}
+[48.270524] (-) TimerEvent: {}
+[48.370951] (-) TimerEvent: {}
+[48.471354] (-) TimerEvent: {}
+[48.571753] (-) TimerEvent: {}
+[48.672165] (-) TimerEvent: {}
+[48.772577] (-) TimerEvent: {}
+[48.872998] (-) TimerEvent: {}
+[48.873711] (micro_ros_agent) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiSerialAgentLinux.cpp.o\x1b[0m\n'}
+[48.973113] (-) TimerEvent: {}
+[49.073526] (-) TimerEvent: {}
+[49.173944] (-) TimerEvent: {}
+[49.274359] (-) TimerEvent: {}
+[49.374807] (-) TimerEvent: {}
+[49.475297] (-) TimerEvent: {}
+[49.575800] (-) TimerEvent: {}
+[49.676340] (-) TimerEvent: {}
+[49.776820] (-) TimerEvent: {}
+[49.877317] (-) TimerEvent: {}
+[49.977861] (-) TimerEvent: {}
+[50.078450] (-) TimerEvent: {}
+[50.181549] (-) TimerEvent: {}
+[50.240941] (micro_ros_agent) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiTermiosAgentLinux.cpp.o\x1b[0m\n'}
+[50.281652] (-) TimerEvent: {}
+[50.382459] (-) TimerEvent: {}
+[50.482795] (-) TimerEvent: {}
+[50.583107] (-) TimerEvent: {}
+[50.683465] (-) TimerEvent: {}
+[50.720182] (micro_ros_agent) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/PseudoTerminalAgentLinux.cpp.o\x1b[0m\n'}
+[50.783571] (-) TimerEvent: {}
+[50.884319] (-) TimerEvent: {}
+[50.898311] (micro_ros_agent) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/can/CanAgentLinux.cpp.o\x1b[0m\n'}
+[50.984431] (-) TimerEvent: {}
+[51.085017] (-) TimerEvent: {}
+[51.185325] (-) TimerEvent: {}
+[51.285644] (-) TimerEvent: {}
+[51.385954] (-) TimerEvent: {}
+[51.486276] (-) TimerEvent: {}
+[51.586602] (-) TimerEvent: {}
+[51.686922] (-) TimerEvent: {}
+[51.787232] (-) TimerEvent: {}
+[51.887542] (-) TimerEvent: {}
+[51.987859] (-) TimerEvent: {}
+[52.088198] (-) TimerEvent: {}
+[52.188516] (-) TimerEvent: {}
+[52.288826] (-) TimerEvent: {}
+[52.389146] (-) TimerEvent: {}
+[52.489465] (-) TimerEvent: {}
+[52.589794] (-) TimerEvent: {}
+[52.690106] (-) TimerEvent: {}
+[52.790420] (-) TimerEvent: {}
+[52.890729] (-) TimerEvent: {}
+[52.991042] (-) TimerEvent: {}
+[53.091353] (-) TimerEvent: {}
+[53.191655] (-) TimerEvent: {}
+[53.291981] (-) TimerEvent: {}
+[53.392298] (-) TimerEvent: {}
+[53.492627] (-) TimerEvent: {}
+[53.592958] (-) TimerEvent: {}
+[53.693283] (-) TimerEvent: {}
+[53.793592] (-) TimerEvent: {}
+[53.893920] (-) TimerEvent: {}
+[53.994244] (-) TimerEvent: {}
+[54.094566] (-) TimerEvent: {}
+[54.194897] (-) TimerEvent: {}
+[54.295238] (-) TimerEvent: {}
+[54.397131] (-) TimerEvent: {}
+[54.498068] (-) TimerEvent: {}
+[54.598814] (-) TimerEvent: {}
+[54.699428] (-) TimerEvent: {}
+[54.799822] (-) TimerEvent: {}
+[54.888732] (micro_ros_agent) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServerLinux.cpp.o\x1b[0m\n'}
+[54.899926] (-) TimerEvent: {}
+[55.000891] (-) TimerEvent: {}
+[55.101376] (-) TimerEvent: {}
+[55.142971] (micro_ros_agent) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServer.cpp.o\x1b[0m\n'}
+[55.201487] (-) TimerEvent: {}
+[55.301802] (-) TimerEvent: {}
+[55.402105] (-) TimerEvent: {}
+[55.502431] (-) TimerEvent: {}
+[55.602731] (-) TimerEvent: {}
+[55.703129] (-) TimerEvent: {}
+[55.803449] (-) TimerEvent: {}
+[55.854648] (micro_ros_agent) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/TopicPubSubType.cpp.o\x1b[0m\n'}
+[55.903561] (-) TimerEvent: {}
+[56.003981] (-) TimerEvent: {}
+[56.104414] (-) TimerEvent: {}
+[56.204815] (-) TimerEvent: {}
+[56.211635] (micro_ros_agent) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/xmlobjects/xmlobjects.cpp.o\x1b[0m\n'}
+[56.304924] (-) TimerEvent: {}
+[56.400360] (micro_ros_agent) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastEntities.cpp.o\x1b[0m\n'}
+[56.405035] (-) TimerEvent: {}
+[56.505435] (-) TimerEvent: {}
+[56.605840] (-) TimerEvent: {}
+[56.706248] (-) TimerEvent: {}
+[56.806666] (-) TimerEvent: {}
+[56.907108] (-) TimerEvent: {}
+[57.007614] (-) TimerEvent: {}
+[57.108040] (-) TimerEvent: {}
+[57.208461] (-) TimerEvent: {}
+[57.308855] (-) TimerEvent: {}
+[57.409269] (-) TimerEvent: {}
+[57.509683] (-) TimerEvent: {}
+[57.610287] (-) TimerEvent: {}
+[57.710631] (-) TimerEvent: {}
+[57.810974] (-) TimerEvent: {}
+[57.911303] (-) TimerEvent: {}
+[58.011637] (-) TimerEvent: {}
+[58.111971] (-) TimerEvent: {}
+[58.212327] (-) TimerEvent: {}
+[58.312681] (-) TimerEvent: {}
+[58.354947] (micro_ros_agent) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastMiddleware.cpp.o\x1b[0m\n'}
+[58.412796] (-) TimerEvent: {}
+[58.513149] (-) TimerEvent: {}
+[58.613519] (-) TimerEvent: {}
+[58.713863] (-) TimerEvent: {}
+[58.814210] (-) TimerEvent: {}
+[58.914549] (-) TimerEvent: {}
+[59.014923] (-) TimerEvent: {}
+[59.115421] (-) TimerEvent: {}
+[59.215824] (-) TimerEvent: {}
+[59.316239] (-) TimerEvent: {}
+[59.416701] (-) TimerEvent: {}
+[59.517163] (-) TimerEvent: {}
+[59.617799] (-) TimerEvent: {}
+[59.642819] (micro_ros_agent) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSEntities.cpp.o\x1b[0m\n'}
+[59.717974] (-) TimerEvent: {}
+[59.818589] (-) TimerEvent: {}
+[59.919031] (-) TimerEvent: {}
+[60.019456] (-) TimerEvent: {}
+[60.119899] (-) TimerEvent: {}
+[60.220362] (-) TimerEvent: {}
+[60.233139] (micro_ros_agent) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSMiddleware.cpp.o\x1b[0m\n'}
+[60.320476] (-) TimerEvent: {}
+[60.420933] (-) TimerEvent: {}
+[60.521319] (-) TimerEvent: {}
+[60.621784] (-) TimerEvent: {}
+[60.722120] (-) TimerEvent: {}
+[60.822548] (-) TimerEvent: {}
+[60.923023] (-) TimerEvent: {}
+[61.023471] (-) TimerEvent: {}
+[61.123883] (-) TimerEvent: {}
+[61.224320] (-) TimerEvent: {}
+[61.324661] (-) TimerEvent: {}
+[61.425002] (-) TimerEvent: {}
+[61.525340] (-) TimerEvent: {}
+[61.625689] (-) TimerEvent: {}
+[61.726029] (-) TimerEvent: {}
+[61.826364] (-) TimerEvent: {}
+[61.926706] (-) TimerEvent: {}
+[62.027030] (-) TimerEvent: {}
+[62.127357] (-) TimerEvent: {}
+[62.227685] (-) TimerEvent: {}
+[62.328020] (-) TimerEvent: {}
+[62.428353] (-) TimerEvent: {}
+[62.528688] (-) TimerEvent: {}
+[62.629026] (-) TimerEvent: {}
+[62.729353] (-) TimerEvent: {}
+[62.829692] (-) TimerEvent: {}
+[62.930030] (-) TimerEvent: {}
+[63.031850] (-) TimerEvent: {}
+[63.132228] (-) TimerEvent: {}
+[63.232556] (-) TimerEvent: {}
+[63.332893] (-) TimerEvent: {}
+[63.433232] (-) TimerEvent: {}
+[63.533566] (-) TimerEvent: {}
+[63.633903] (-) TimerEvent: {}
+[63.734246] (-) TimerEvent: {}
+[63.834593] (-) TimerEvent: {}
+[63.934930] (-) TimerEvent: {}
+[64.035262] (-) TimerEvent: {}
+[64.135589] (-) TimerEvent: {}
+[64.235907] (-) TimerEvent: {}
+[64.336320] (-) TimerEvent: {}
+[64.436727] (-) TimerEvent: {}
+[64.537292] (-) TimerEvent: {}
+[64.638132] (-) TimerEvent: {}
+[64.738566] (-) TimerEvent: {}
+[64.839157] (-) TimerEvent: {}
+[64.939644] (-) TimerEvent: {}
+[65.040058] (-) TimerEvent: {}
+[65.140715] (-) TimerEvent: {}
+[65.241081] (-) TimerEvent: {}
+[65.341433] (-) TimerEvent: {}
+[65.441815] (-) TimerEvent: {}
+[65.542241] (-) TimerEvent: {}
+[65.642673] (-) TimerEvent: {}
+[65.743018] (-) TimerEvent: {}
+[65.843439] (-) TimerEvent: {}
+[65.943776] (-) TimerEvent: {}
+[66.044084] (-) TimerEvent: {}
+[66.144407] (-) TimerEvent: {}
+[66.244735] (-) TimerEvent: {}
+[66.345065] (-) TimerEvent: {}
+[66.445390] (-) TimerEvent: {}
+[66.545751] (-) TimerEvent: {}
+[66.646072] (-) TimerEvent: {}
+[66.746390] (-) TimerEvent: {}
+[66.846733] (-) TimerEvent: {}
+[66.947079] (-) TimerEvent: {}
+[67.047422] (-) TimerEvent: {}
+[67.147740] (-) TimerEvent: {}
+[67.248050] (-) TimerEvent: {}
+[67.348366] (-) TimerEvent: {}
+[67.448684] (-) TimerEvent: {}
+[67.549005] (-) TimerEvent: {}
+[67.649322] (-) TimerEvent: {}
+[67.749643] (-) TimerEvent: {}
+[67.849965] (-) TimerEvent: {}
+[67.950258] (-) TimerEvent: {}
+[68.050553] (-) TimerEvent: {}
+[68.118586] (micro_ros_agent) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libmicroxrcedds_agent.so\x1b[0m\n'}
+[68.150726] (-) TimerEvent: {}
+[68.251061] (-) TimerEvent: {}
+[68.351379] (-) TimerEvent: {}
+[68.451691] (-) TimerEvent: {}
+[68.548820] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target microxrcedds_agent\n'}
+[68.551803] (-) TimerEvent: {}
+[68.576019] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mNo install step for 'uagent'\x1b[0m\n"}
+[68.607894] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mCompleted 'uagent'\x1b[0m\n"}
+[68.643182] (micro_ros_agent) StdoutLine: {'line': b'Built target uagent\n'}
+[68.651922] (-) TimerEvent: {}
+[68.670001] (micro_ros_agent) StdoutLine: {'line': b"[ 43%] \x1b[34m\x1b[1mPerforming install step for 'xrceagent'\x1b[0m\n"}
+[68.726241] (micro_ros_agent) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target microxrcedds_agent\x1b[0m\n'}
+[68.752032] (-) TimerEvent: {}
+[68.805218] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target microxrcedds_agent\n'}
+[68.823875] (micro_ros_agent) StdoutLine: {'line': b'\x1b[36mInstall the project...\x1b[0m\n'}
+[68.834215] (micro_ros_agent) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[68.835132] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.2.1\n'}
+[68.839098] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.2\n'}
+[68.839654] (micro_ros_agent) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.2.1" to ""\n'}
+[68.839872] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so\n'}
+[68.839990] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent\n'}
+[68.840881] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp\n'}
+[68.841105] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/topic\n'}
+[68.842510] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/topic/Topic.hpp\n'}
+[68.842774] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/datawriter\n'}
+[68.842905] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/datawriter/DataWriter.hpp\n'}
+[68.843028] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client\n'}
+[68.843133] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session\n'}
+[68.843240] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session/Session.hpp\n'}
+[68.843354] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session/SessionInfo.hpp\n'}
+[68.843459] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream\n'}
+[68.843570] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/InputStream.hpp\n'}
+[68.843687] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/OutputStream.hpp\n'}
+[68.843814] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/client/ProxyClient.hpp\n'}
+[68.843944] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/subscriber\n'}
+[68.844078] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/subscriber/Subscriber.hpp\n'}
+[68.844192] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/publisher\n'}
+[68.844288] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/publisher/Publisher.hpp\n'}
+[68.844390] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/requester\n'}
+[68.844492] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/requester/Requester.hpp\n'}
+[68.844589] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types\n'}
+[68.844711] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types/SubMessageHeader.hpp\n'}
+[68.845006] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types/MessageHeader.hpp\n'}
+[68.845131] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types/Optional.hpp\n'}
+[68.845274] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types/XRCETypes.hpp\n'}
+[68.845393] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/types/TopicPubSubType.hpp\n'}
+[68.845518] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/Agent.hpp\n'}
+[68.845666] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/scheduler\n'}
+[68.845808] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/scheduler/Scheduler.hpp\n'}
+[68.845915] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/scheduler/PacketScheduler.hpp\n'}
+[68.846053] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport\n'}
+[68.846171] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/udp\n'}
+[68.846285] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentWindows.hpp\n'}
+[68.846398] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentLinux.hpp\n'}
+[68.846512] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentWindows.hpp\n'}
+[68.846625] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentLinux.hpp\n'}
+[68.846755] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery\n'}
+[68.846945] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServer.hpp\n'}
+[68.847068] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerWindows.hpp\n'}
+[68.847186] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerLinux.hpp\n'}
+[68.847281] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint\n'}
+[68.847397] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/SerialEndPoint.hpp\n'}
+[68.847512] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/MultiSerialEndPoint.hpp\n'}
+[68.847632] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CanEndPoint.hpp\n'}
+[68.847758] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv4EndPoint.hpp\n'}
+[68.847895] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv6EndPoint.hpp\n'}
+[68.848025] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CustomEndPoint.hpp\n'}
+[68.848136] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing\n'}
+[68.848246] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing/StreamFramingProtocol.hpp\n'}
+[68.848376] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp\n'}
+[68.848470] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPServerBase.hpp\n'}
+[68.848598] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentWindows.hpp\n'}
+[68.848732] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPConnection.hpp\n'}
+[68.848827] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentLinux.hpp\n'}
+[68.848944] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentLinux.hpp\n'}
+[68.849038] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentWindows.hpp\n'}
+[68.849163] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/util\n'}
+[68.849278] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceLinux.hpp\n'}
+[68.849394] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceWindows.hpp\n'}
+[68.849509] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/can\n'}
+[68.849631] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/can/CanAgentLinux.hpp\n'}
+[68.849819] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p\n'}
+[68.849998] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscovererLinux.hpp\n'}
+[68.850126] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscoverer.hpp\n'}
+[68.850247] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/TransportRc.hpp\n'}
+[68.850368] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp\n'}
+[68.850487] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/custom\n'}
+[68.850604] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/custom/CustomAgent.hpp\n'}
+[68.850755] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp\n'}
+[68.850875] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial\n'}
+[68.850991] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiSerialAgentLinux.hpp\n'}
+[68.851107] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiTermiosAgentLinux.hpp\n'}
+[68.851223] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/baud_rate_table_linux.h\n'}
+[68.851344] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/PseudoTerminalAgentLinux.hpp\n'}
+[68.851597] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/TermiosAgentLinux.hpp\n'}
+[68.851709] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/transport/serial/SerialAgentLinux.hpp\n'}
+[68.851832] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/processor\n'}
+[68.851939] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/processor/Processor.hpp\n'}
+[68.852051] (-) TimerEvent: {}
+[68.852180] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/message\n'}
+[68.852291] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/message/OutputMessage.hpp\n'}
+[68.852411] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/message/Packet.hpp\n'}
+[68.852518] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/message/InputMessage.hpp\n'}
+[68.852633] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/Root.hpp\n'}
+[68.852738] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/datareader\n'}
+[68.852852] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/datareader/DataReader.hpp\n'}
+[68.852973] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/participant\n'}
+[68.853088] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/participant/Participant.hpp\n'}
+[68.853193] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware\n'}
+[68.853306] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced\n'}
+[68.853416] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedMiddleware.hpp\n'}
+[68.853528] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedEntities.hpp\n'}
+[68.853632] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds\n'}
+[68.853761] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSMiddleware.hpp\n'}
+[68.853901] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSEntities.hpp\n'}
+[68.854015] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/utils\n'}
+[68.854120] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/utils/Callbacks.hpp\n'}
+[68.854233] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/Middleware.hpp\n'}
+[68.854347] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast\n'}
+[68.854457] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastEntities.hpp\n'}
+[68.854566] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastMiddleware.hpp\n'}
+[68.854678] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/reader\n'}
+[68.854796] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/reader/Reader.hpp\n'}
+[68.854900] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/p2p\n'}
+[68.855014] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClient.hpp\n'}
+[68.855123] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClientManager.hpp\n'}
+[68.855280] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils\n'}
+[68.855383] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp\n'}
+[68.855503] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutex.hpp\n'}
+[68.855627] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/Conversion.hpp\n'}
+[68.855740] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/Functions.hpp\n'}
+[68.855853] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/Color.hpp\n'}
+[68.855964] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/Time.hpp\n'}
+[68.856084] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/SeqNum.hpp\n'}
+[68.856178] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/TokenBucket.hpp\n'}
+[68.858321] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutexPriority.hpp\n'}
+[68.858629] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/visibility.hpp\n'}
+[68.859263] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/replier\n'}
+[68.859396] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/replier/Replier.hpp\n'}
+[68.859500] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/logger\n'}
+[68.859612] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp\n'}
+[68.859712] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/object\n'}
+[68.859916] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/object/XRCEObject.hpp\n'}
+[68.860044] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets.cmake\n'}
+[68.860227] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets-release.cmake\n'}
+[68.860860] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/include/uxr/agent/config.hpp\n'}
+[68.861045] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/microxrcedds_agent/LICENSE\n'}
+[68.861271] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfig.cmake\n'}
+[68.861513] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfigVersion.cmake\n'}
+[68.879191] (micro_ros_agent) StdoutLine: {'line': b"[ 50%] \x1b[34m\x1b[1mCompleted 'xrceagent'\x1b[0m\n"}
+[68.913019] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] Built target xrceagent\n'}
+[68.935601] (micro_ros_agent) StdoutLine: {'line': b"[ 56%] \x1b[34m\x1b[1mCreating directories for 'micro_ros_agent'\x1b[0m\n"}
+[68.952184] (-) TimerEvent: {}
+[69.010348] (micro_ros_agent) StdoutLine: {'line': b"[ 62%] \x1b[34m\x1b[1mNo download step for 'micro_ros_agent'\x1b[0m\n"}
+[69.035259] (micro_ros_agent) StdoutLine: {'line': b"[ 68%] \x1b[34m\x1b[1mNo update step for 'micro_ros_agent'\x1b[0m\n"}
+[69.052309] (-) TimerEvent: {}
+[69.061642] (micro_ros_agent) StdoutLine: {'line': b"[ 75%] \x1b[34m\x1b[1mNo patch step for 'micro_ros_agent'\x1b[0m\n"}
+[69.087341] (micro_ros_agent) StdoutLine: {'line': b"[ 81%] \x1b[34m\x1b[1mPerforming configure step for 'micro_ros_agent'\x1b[0m\n"}
+[69.097746] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent/micro_ros_agent-prefix/tmp/micro_ros_agent-cache-.cmake\n'}
+[69.113836] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[69.152409] (-) TimerEvent: {}
+[69.252701] (-) TimerEvent: {}
+[69.352974] (-) TimerEvent: {}
+[69.361917] (micro_ros_agent) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[69.453074] (-) TimerEvent: {}
+[69.553363] (-) TimerEvent: {}
+[69.599535] (micro_ros_agent) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[69.605284] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for C++ include pthread.h\n'}
+[69.653495] (-) TimerEvent: {}
+[69.704657] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for C++ include pthread.h - found\n'}
+[69.705181] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[69.753594] (-) TimerEvent: {}
+[69.801829] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[69.802944] (micro_ros_agent) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[69.808828] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_cmake: 3.1.3 (/opt/ros/humble/share/rosidl_cmake/cmake)\n'}
+[69.811455] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[69.837768] (micro_ros_agent) StdoutLine: {'line': b'-- Found fastrtps_cmake_module: 2.2.0 (/opt/ros/humble/share/fastrtps_cmake_module/cmake)\n'}
+[69.841022] (micro_ros_agent) StdoutLine: {'line': b'-- Found rmw_dds_common: 1.6.0 (/opt/ros/humble/share/rmw_dds_common/cmake)\n'}
+[69.853690] (-) TimerEvent: {}
+[69.897707] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[69.914490] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[69.932682] (micro_ros_agent) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[69.953803] (-) TimerEvent: {}
+[69.959424] (micro_ros_agent) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[69.993556] (micro_ros_agent) StdoutLine: {'line': b'-- Found rmw_fastrtps_shared_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_shared_cpp/cmake)\n'}
+[70.053920] (-) TimerEvent: {}
+[70.071580] (micro_ros_agent) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[70.073791] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[70.077452] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_cmake_gtest: 1.3.2 (/opt/ros/humble/share/ament_cmake_gtest/cmake)\n'}
+[70.079485] (micro_ros_agent) StdoutLine: {'line': b'-- Found micro_ros_msgs: 1.0.0 (/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake)\n'}
+[70.154006] (-) TimerEvent: {}
+[70.204831] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[70.216907] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[70.218435] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent\n'}
+[70.242319] (micro_ros_agent) StdoutLine: {'line': b"[ 87%] \x1b[34m\x1b[1mPerforming build step for 'micro_ros_agent'\x1b[0m\n"}
+[70.254128] (-) TimerEvent: {}
+[70.286069] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/Agent.cpp.o\x1b[0m\n'}
+[70.286430] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_manager.cpp.o\x1b[0m\n'}
+[70.286551] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/main.cpp.o\x1b[0m\n'}
+[70.354303] (-) TimerEvent: {}
+[70.454879] (-) TimerEvent: {}
+[70.555270] (-) TimerEvent: {}
+[70.655661] (-) TimerEvent: {}
+[70.756037] (-) TimerEvent: {}
+[70.856377] (-) TimerEvent: {}
+[70.956802] (-) TimerEvent: {}
+[71.057147] (-) TimerEvent: {}
+[71.157530] (-) TimerEvent: {}
+[71.257944] (-) TimerEvent: {}
+[71.298527] (micro_ros_agent) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_typesupport.cpp.o\x1b[0m\n'}
+[71.358055] (-) TimerEvent: {}
+[71.458525] (-) TimerEvent: {}
+[71.558857] (-) TimerEvent: {}
+[71.659192] (-) TimerEvent: {}
+[71.760246] (-) TimerEvent: {}
+[71.860848] (-) TimerEvent: {}
+[71.961497] (-) TimerEvent: {}
+[72.061949] (-) TimerEvent: {}
+[72.163682] (-) TimerEvent: {}
+[72.264101] (-) TimerEvent: {}
+[72.364516] (-) TimerEvent: {}
+[72.464927] (-) TimerEvent: {}
+[72.565350] (-) TimerEvent: {}
+[72.665761] (-) TimerEvent: {}
+[72.766191] (-) TimerEvent: {}
+[72.866601] (-) TimerEvent: {}
+[72.967002] (-) TimerEvent: {}
+[73.067397] (-) TimerEvent: {}
+[73.167800] (-) TimerEvent: {}
+[73.268216] (-) TimerEvent: {}
+[73.368639] (-) TimerEvent: {}
+[73.468966] (-) TimerEvent: {}
+[73.569294] (-) TimerEvent: {}
+[73.669721] (-) TimerEvent: {}
+[73.770150] (-) TimerEvent: {}
+[73.870594] (-) TimerEvent: {}
+[73.971023] (-) TimerEvent: {}
+[74.071417] (-) TimerEvent: {}
+[74.171813] (-) TimerEvent: {}
+[74.272145] (-) TimerEvent: {}
+[74.372530] (-) TimerEvent: {}
+[74.472847] (-) TimerEvent: {}
+[74.573160] (-) TimerEvent: {}
+[74.673479] (-) TimerEvent: {}
+[74.773807] (-) TimerEvent: {}
+[74.874344] (-) TimerEvent: {}
+[74.974686] (-) TimerEvent: {}
+[75.075173] (-) TimerEvent: {}
+[75.175606] (-) TimerEvent: {}
+[75.275931] (-) TimerEvent: {}
+[75.376289] (-) TimerEvent: {}
+[75.476727] (-) TimerEvent: {}
+[75.577035] (-) TimerEvent: {}
+[75.677344] (-) TimerEvent: {}
+[75.777932] (-) TimerEvent: {}
+[75.878236] (-) TimerEvent: {}
+[75.978542] (-) TimerEvent: {}
+[76.078907] (-) TimerEvent: {}
+[76.122998] (micro_ros_agent) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/utils/demangle.cpp.o\x1b[0m\n'}
+[76.179048] (-) TimerEvent: {}
+[76.280244] (-) TimerEvent: {}
+[76.380670] (-) TimerEvent: {}
+[76.481335] (-) TimerEvent: {}
+[76.557432] (micro_ros_agent) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable micro_ros_agent\x1b[0m\n'}
+[76.581476] (-) TimerEvent: {}
+[76.681963] (-) TimerEvent: {}
+[76.782567] (-) TimerEvent: {}
+[76.882965] (-) TimerEvent: {}
+[76.983305] (-) TimerEvent: {}
+[77.037035] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target micro_ros_agent\n'}
+[77.065085] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mNo install step for 'micro_ros_agent'\x1b[0m\n"}
+[77.083448] (-) TimerEvent: {}
+[77.092020] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mCompleted 'micro_ros_agent'\x1b[0m\n"}
+[77.126000] (micro_ros_agent) StdoutLine: {'line': b'Built target micro_ros_agent\n'}
+[77.138302] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[77.170161] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'install'}
+[77.170444] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent'], 'cwd': '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max_xxv'), ('XDG_SESSION_TYPE', 'x11'), ('KIGITHUB', 'https://github.com/KiCad'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/max_xxv'), ('OLDPWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3187'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'max_xxv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'max_xxv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ufficio:@/tmp/.ICE-unix/3187,unix/ufficio:/tmp/.ICE-unix/3187'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/17967ecd_7b01_4307_bf24_203ac1f414ea'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'it_IT.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.774'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/build/micro_ros_agent'), ('KICAD_PATH', '/usr/share/kicad'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2914b36b49322b52be80484a63542473'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_msgs:/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_setup:/opt/ros/humble')]), 'shell': False}
+[77.178190] (micro_ros_agent) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[77.178441] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/ament_index/resource_index/package_run_dependencies/micro_ros_agent\n'}
+[77.178974] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/ament_index/resource_index/parent_prefix_path/micro_ros_agent\n'}
+[77.179266] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/environment/ament_prefix_path.sh\n'}
+[77.179426] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/environment/ament_prefix_path.dsv\n'}
+[77.179607] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/environment/path.sh\n'}
+[77.179708] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/environment/path.dsv\n'}
+[77.181419] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.bash\n'}
+[77.181661] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.sh\n'}
+[77.181769] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.zsh\n'}
+[77.181871] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.dsv\n'}
+[77.181973] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/package.dsv\n'}
+[77.182072] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/ament_index/resource_index/packages/micro_ros_agent\n'}
+[77.182172] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[77.182281] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/cmake/micro_ros_agentConfig.cmake\n'}
+[77.182379] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/cmake/micro_ros_agentConfig-version.cmake\n'}
+[77.182477] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/package.xml\n'}
+[77.182633] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent\n'}
+[77.184229] (micro_ros_agent) StdoutLine: {'line': b'-- Set runtime path of "/home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent" to ""\n'}
+[77.184432] (-) TimerEvent: {}
+[77.184623] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/launch\n'}
+[77.184743] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws/install/micro_ros_agent/share/micro_ros_agent/launch/micro_ros_agent_launch.py\n'}
+[77.186552] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[77.281026] (micro_ros_agent) JobEnded: {'identifier': 'micro_ros_agent', 'rc': 0}
+[77.282314] (-) EventReactorShutdown: {}
