@@ -240,8 +240,8 @@ void StartTaskCom(void *argument)
 	rclc_publisher_init_default( &publisher1, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int64), "pInt64");
 	rclc_publisher_init_default( &publisher2, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, BatteryState), "pBatt");
 	rclc_publisher_init_default( &publisher3, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature), "pTemp");
-	rclc_publisher_init_default( &publisher4, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature), "pFloat64M");
-	rclc_publisher_init_default( &publisher5, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature), "pColorRGBA");
+	rclc_publisher_init_default( &publisher4, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64MultiArray), "pFloat64M");
+	rclc_publisher_init_default( &publisher5, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, ColorRGBA), "pColorRGBA");
 
 	// preinit with random test value
 	msg0.data = 1;
@@ -275,7 +275,7 @@ void StartTaskCom(void *argument)
 //	ret += rcl_publish(&publisher2, &msg2, NULL);
 //	ret += rcl_publish(&publisher3, &msg3, NULL);
 //	ret += rcl_publish(&publisher4, &msg4, NULL);
-//	ret += rcl_publish(&publisher4, &msg4, NULL);
+	ret += rcl_publish(&publisher4, &msg4, NULL);
 
 	if (ret != RCL_RET_OK)
 	{
