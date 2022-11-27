@@ -1,0 +1,10 @@
+source /opt/ros/humble/setup.bash
+cd  /home/max_xxv/STM32CubeIDE/workspace_1.9.0/pNav32_RobotMotorController/agent_ws
+source install/setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial -b 115200 --dev /dev/ttyUSB0
+
+
+
+ros2 topic list
+ros2 topic echo /pBatt
+ros2 topic echo /pTemp

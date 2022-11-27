@@ -65,6 +65,23 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
+rcl_publisher_t publisher_int32;
+std_msgs__msg__Int32 msgInt32;
+
+rcl_publisher_t publisher_int64;
+std_msgs__msg__Int64 msgInt64;
+
+rcl_publisher_t publisher_temp;
+sensor_msgs__msg__Temperature msgTemperature;
+
+rcl_publisher_t publisher_color;
+std_msgs__msg__ColorRGBA msgColorRGBA;
+
+rcl_publisher_t publisher_batt;
+sensor_msgs__msg__BatteryState msgBattery;
+rosidl_runtime_c__float__Sequence battVoltage;
+const uint NUMBEROFFCELL = 6;
+
 /* USER CODE END Variables */
 /* Definitions for rosTaskLed */
 osThreadId_t rosTaskLedHandle;
@@ -205,28 +222,6 @@ void StartTaskCom(void *argument)
 	}
 
 	// micro-ROS app
-	rcl_publisher_t publisher_int32;
-	std_msgs__msg__Int32 msgInt32;
-
-	rcl_publisher_t publisher_int64;
-	std_msgs__msg__Int64 msgInt64;
-
-	rcl_publisher_t publisher_batt;
-	sensor_msgs__msg__BatteryState msgBattery;
-
-	rcl_publisher_t publisher_temp;
-	sensor_msgs__msg__Temperature msgTemperature;
-
-	rcl_publisher_t publisher_float64m;
-	std_msgs__msg__Float64MultiArray msgFloat64m;
-
-	rcl_publisher_t publisher_color;
-	std_msgs__msg__ColorRGBA msgColorRGBA;
-
-
-	rcl_publisher_t publisher_joint;
-	control_msgs__msg__JointJog msgJointJog;
-
 
 	rclc_support_t support;
 	rcl_allocator_t allocator;
@@ -244,83 +239,53 @@ void StartTaskCom(void *argument)
 	rclc_publisher_init_default( &publisher_int32, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "pInt32");
 	rclc_publisher_init_default( &publisher_int64, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int64), "pInt64");
 	rclc_publisher_init_default( &publisher_color, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, ColorRGBA), "pColorRGBA");
-//	rclc_publisher_init_default( &publisher_batt, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, BatterySta), "pBatt");
-//	rclc_publisher_init_default( &publisher_temp, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature), "pTemp");
-//	rclc_publisher_init_default( &publisher_float64m, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64MultiArray), "pFloat64M");
-	rclc_publisher_init_default( &publisher_joint, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(control_msgs, msg, JointJog), "pJointJog");
+	rclc_publisher_init_default( &publisher_batt, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, BatteryState), "pBatt");
+	rclc_publisher_init_default( &publisher_temp, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature), "pTemp");
 
 	// preinit with random test value
 	msgInt32.data = 1;
+
 	msgInt64.data = 10;
-
-
-//	rosidl_runtime_c__float__Sequence seqVoltage;
-//	rosidl_runtime_c__float__Sequence seqTemperature;
-//	rosidl_runtime_c__String strLocation;
-//	rosidl_runtime_c__String strSerialNumber;
-//
-////	seqVoltage.capacity = 4;
-////	seqVoltage.size = 4;
-////
-////	seqTemperature.capacity = 4;
-////	seqTemperature.size  = 4;
-////
-////	strLocation.capacity = 8;
-////	strLocation.data = 'Base';
-////	strLocation.size = 8;
-////
-////	strSerialNumber.capacity = 8;
-////	strSerialNumber.size = 8;
-//
-//	msgBattery.voltage = 24.9;
-//	msgBattery.temperature = 43.5;
-//	msgBattery.current = 10;
-//	msgBattery.charge = 35;
-//	msgBattery.capacity =1;
-//	msgBattery.percentage = 0.6;
-//	msgBattery.power_supply_status = sensor_msgs__msg__BatteryState__POWER_SUPPLY_STATUS_UNKNOWN;
-//	msgBattery.power_supply_health = sensor_msgs__msg__BatteryState__POWER_SUPPLY_HEALTH_UNKNOWN;
-//	msgBattery.power_supply_technology = sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LION;
-//	msgBattery.present = true;
-//	msgBattery.cell_voltage = seqVoltage;
-//	msgBattery.cell_temperature = seqTemperature;
-//	msgBattery.location = strLocation;
-//	msgBattery.serial_number = strSerialNumber;
-
-
-//	msgTemperature.variance = 0;
-//	msgTemperature.temperature = (double)(45);
-
 
 	msgColorRGBA.r= 127;
 	msgColorRGBA.g= 127;
 	msgColorRGBA.b= 100;
 	msgColorRGBA.a= 200;
 
+	msgBattery.power_supply_status = sensor_msgs__msg__BatteryState__POWER_SUPPLY_STATUS_UNKNOWN;
+	msgBattery.power_supply_health = sensor_msgs__msg__BatteryState__POWER_SUPPLY_HEALTH_UNKNOWN;
+	msgBattery.power_supply_technology = sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LION;
+	msgBattery.charge = 2;
+	msgBattery.current = 10;
+    battVoltage.size = NUMBEROFFCELL;
+    msgBattery.cell_voltage.capacity = NUMBEROFFCELL;
+    msgBattery.cell_voltage.size = NUMBEROFFCELL;
+    msgBattery.cell_voltage.data = ( float*) malloc( msgBattery.cell_voltage.capacity * sizeof(float));
+    msgBattery.cell_voltage.data[0] = 0;
+    msgBattery.cell_voltage.data[1] = 1;
+    msgBattery.cell_voltage.data[3] = 3;
 
+	msgTemperature.temperature = 25;
 
   for(;;)
   {
-
-	// Random data update before publish
+	// TEST: Random data update before publish
 	msgInt32.data++;
 	msgInt64.data++;
 	msgBattery.voltage += 0.001;
-	//msg3.temperature += 0.001;
+	msgTemperature.temperature += 0.001;
 	msgColorRGBA.g++;
-
+	// TEST END
 
 	// Led ON
 	HAL_GPIO_WritePin(O_LED_D3_GPIO_Port, O_LED_D3_Pin, 0);
 
 	rcl_ret_t ret;
-	ret = rcl_publish(&publisher_int32, &msgInt32, NULL);		// OK
-	ret += rcl_publish(&publisher_int64, &msgInt64, NULL);		// OK
-	ret += rcl_publish(&publisher_color, &msgColorRGBA, NULL);	// OK
-//	ret += rcl_publish(&publisher_batt, &msgBattery, NULL);
-//	ret += rcl_publish(&publisher_temp, &msgTemperature, NULL);
-//	ret += rcl_publish(&publisher_float64m, &msgFloat64m, NULL);
-	ret += rcl_publish(&publisher_joint, &msgJointJog, NULL);
+	ret = rcl_publish(&publisher_int32, &msgInt32, NULL);
+	ret += rcl_publish(&publisher_int64, &msgInt64, NULL);
+	ret += rcl_publish(&publisher_color, &msgColorRGBA, NULL);
+	ret += rcl_publish(&publisher_batt, &msgBattery, NULL);
+	ret += rcl_publish(&publisher_temp, &msgTemperature, NULL);
 
 	if (ret != RCL_RET_OK)
 	{
@@ -331,9 +296,6 @@ void StartTaskCom(void *argument)
 	HAL_GPIO_WritePin(O_LED_D3_GPIO_Port, O_LED_D3_Pin, 1);
 	osDelay(100);
   }
-
-
-
   /* USER CODE END StartTaskCom */
 }
 
