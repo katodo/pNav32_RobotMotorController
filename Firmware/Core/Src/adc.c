@@ -227,17 +227,20 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**ADC1 GPIO Configuration
     PC2     ------> ADC1_IN12
+    PA0-WKUP     ------> ADC1_IN0
     PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
+    PA4     ------> ADC1_IN4
     */
     GPIO_InitStruct.Pin = ADC_VREF_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(ADC_VREF_GPIO_Port, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = ADC_TEMP_Pin;
+    GPIO_InitStruct.Pin = PA0_MAIN_SUPPLY_Pin|ADC_TEMP_Pin|PA3_M1_V_Pin|PA4_M2_V_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(ADC_TEMP_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -257,7 +260,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     PC1     ------> ADC3_IN11
     PC2     ------> ADC3_IN12
     */
-    GPIO_InitStruct.Pin = ADC_MOT1_CUR_Pin|ADC_MOT2_CUR_Pin|ADC_VREF_Pin;
+    GPIO_InitStruct.Pin = PC0_M1_CURRENT_Pin|PC1_M2_CURRENT_Pin|ADC_VREF_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
@@ -300,11 +303,14 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 
     /**ADC1 GPIO Configuration
     PC2     ------> ADC1_IN12
+    PA0-WKUP     ------> ADC1_IN0
     PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
+    PA4     ------> ADC1_IN4
     */
     HAL_GPIO_DeInit(ADC_VREF_GPIO_Port, ADC_VREF_Pin);
 
-    HAL_GPIO_DeInit(ADC_TEMP_GPIO_Port, ADC_TEMP_Pin);
+    HAL_GPIO_DeInit(GPIOA, PA0_MAIN_SUPPLY_Pin|ADC_TEMP_Pin|PA3_M1_V_Pin|PA4_M2_V_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
@@ -323,7 +329,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     PC1     ------> ADC3_IN11
     PC2     ------> ADC3_IN12
     */
-    HAL_GPIO_DeInit(GPIOC, ADC_MOT1_CUR_Pin|ADC_MOT2_CUR_Pin|ADC_VREF_Pin);
+    HAL_GPIO_DeInit(GPIOC, PC0_M1_CURRENT_Pin|PC1_M2_CURRENT_Pin|ADC_VREF_Pin);
 
     /* ADC3 DMA DeInit */
     HAL_DMA_DeInit(adcHandle->DMA_Handle);

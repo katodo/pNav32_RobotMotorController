@@ -57,10 +57,17 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, O_LED_D2_Pin|O_LED_D3_Pin|O_PWR_MOT_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, O_MOT_ENABLE_Pin|O_PWR_SBC_EN_Pin|O_SPI_CS2_Pin|O_SPI_CS1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, PE8_MOT1_AUX_Pin|PE9_MOT2_AUX_Pin|PE12_TEMP1_Pin|PE13_TEMP2_Pin
+                          |PE14_TEMP3_Pin|PE15_TEMP4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(O_PWR_REG_EN_GPIO_Port, O_PWR_REG_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, PB12_MOT1_EN_Pin|O_PWR_REG_EN_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, O_PWR_SBC_EN_Pin|O_SPI_CS2_Pin|O_SPI_CS1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(PD3_MOT2_EN_GPIO_Port, PD3_MOT2_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PEPin PEPin */
   GPIO_InitStruct.Pin = I_KEY1_Pin|I_KEY0_Pin;
@@ -75,19 +82,41 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = O_MOT_ENABLE_Pin|O_PWR_SBC_EN_Pin|O_SPI_CS2_Pin|O_SPI_CS1_Pin;
+  /*Configure GPIO pins : PEPin PEPin PEPin PEPin
+                           PEPin PEPin */
+  GPIO_InitStruct.Pin = PE8_MOT1_AUX_Pin|PE9_MOT2_AUX_Pin|PE12_TEMP1_Pin|PE13_TEMP2_Pin
+                          |PE14_TEMP3_Pin|PE15_TEMP4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PBPin PBPin */
+  GPIO_InitStruct.Pin = PB12_MOT1_EN_Pin|O_PWR_REG_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PDPin PDPin */
+  GPIO_InitStruct.Pin = PD11_EXTI11_E1_IDX_Pin|PD12_EXTI12_E2_IDX_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PCPin PCPin PCPin */
+  GPIO_InitStruct.Pin = O_PWR_SBC_EN_Pin|O_SPI_CS2_Pin|O_SPI_CS1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = O_PWR_REG_EN_Pin;
+  GPIO_InitStruct.Pin = PD3_MOT2_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(O_PWR_REG_EN_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(PD3_MOT2_EN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = TIM_AUX2_PWM_Pin;

@@ -1,0 +1,627 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 68c1f040-cfcc-4fd2-934c-a31e4532a83b)
+
+  (paper "A4")
+
+  (title_block
+    (title "uNav Shield & Bridge ")
+    (date "2016-02-22")
+    (rev "2")
+    (company "Katodo di Mauro Soligo")
+  )
+
+  (lib_symbols
+  )
+
+
+  (no_connect (at -1.27 147.955) (uuid b95ee41b-06b4-4760-ad3b-269c5ef86119))
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/00000000-0000-0000-0000-0000576aaf5f" (page "2"))
+    (path "/00000000-0000-0000-0000-0000576b0a58" (page "3"))
+    (path "/00000000-0000-0000-0000-0000576a54cc" (page "4"))
+    (path "/00000000-0000-0000-0000-0000576a56d7" (page "5"))
+  )
+
+  (symbol_instances
+    (path "/00000000-0000-0000-0000-0000566c5951"
+      (reference "#PWR1") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5bff"
+      (reference "#PWR2") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c01bb"
+      (reference "#PWR4") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568bbf9b"
+      (reference "#PWR5") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c591c"
+      (reference "#PWR6") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5bf9"
+      (reference "#PWR7") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c1fc2"
+      (reference "#PWR9") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c3806"
+      (reference "#PWR10") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c4f81"
+      (reference "#PWR11") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5bdf"
+      (reference "#PWR12") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cf0"
+      (reference "#PWR16") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5d25"
+      (reference "#PWR17") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c26fa"
+      (reference "#PWR18") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c3abc"
+      (reference "#PWR19") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cea"
+      (reference "#PWR20") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5d1f"
+      (reference "#PWR21") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c01cc"
+      (reference "#PWR22") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568bbe79"
+      (reference "#PWR23") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cd0"
+      (reference "#PWR25") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5d05"
+      (reference "#PWR26") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566e1349"
+      (reference "#PWR30") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000056d01b1b"
+      (reference "#PWR32") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566e6314"
+      (reference "#PWR33") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566da915"
+      (reference "#PWR35") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566da886"
+      (reference "#PWR36") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566e39fb"
+      (reference "#PWR37") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d73e2"
+      (reference "#PWR38") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d7dec"
+      (reference "#PWR39") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce648"
+      (reference "#PWR42") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce65d"
+      (reference "#PWR43") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567e657e"
+      (reference "#PWR44") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c10e2"
+      (reference "#PWR51") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c10f9"
+      (reference "#PWR52") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c1110"
+      (reference "#PWR53") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c1127"
+      (reference "#PWR54") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d3ea9"
+      (reference "#PWR55") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d3f26"
+      (reference "#PWR56") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d3fa3"
+      (reference "#PWR57") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d4b03"
+      (reference "#PWR59") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566d4b80"
+      (reference "#PWR60") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566cdbd8"
+      (reference "#PWR61") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce55f"
+      (reference "#PWR62") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567052a4"
+      (reference "#PWR65") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566b6416"
+      (reference "#PWR66") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566b642c"
+      (reference "#PWR67") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567052b0"
+      (reference "#PWR68") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567052aa"
+      (reference "#PWR69") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568ba8fe"
+      (reference "#PWR71") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000056701bbf"
+      (reference "#PWR72") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566f6e23"
+      (reference "#PWR73") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567051d5"
+      (reference "#PWR74") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567051e1"
+      (reference "#PWR75") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567051db"
+      (reference "#PWR76") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568c7069"
+      (reference "#PWR77") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568c71a3"
+      (reference "#PWR78") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566fbab5"
+      (reference "#PWR79") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568c90d9"
+      (reference "#PWR80") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000567011d3"
+      (reference "#PWR81") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000056704313"
+      (reference "#PWR82") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000056703142"
+      (reference "#PWR83") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c3197"
+      (reference "#PWR84") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000056702e2f"
+      (reference "#PWR85") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568c9fe2"
+      (reference "#PWR86") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566b6440"
+      (reference "#PWR87") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566b6454"
+      (reference "#PWR88") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568ba7dc"
+      (reference "#PWR89") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000568cbbbe"
+      (reference "#PWR90") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576ad09a"
+      (reference "#PWR?") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0065"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0078"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0094"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00d7"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00fb"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0101"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0127"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0136"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0153"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0161"
+      (reference "#PWR?") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0170"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0183"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0189"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0197"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b019d"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b01ae"
+      (reference "#PWR?") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b01c7"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fbe"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fc4"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fca"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fd0"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fe7"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1023"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5812"
+      (reference "C1") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5bf3"
+      (reference "C2") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5ce4"
+      (reference "C3") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5d19"
+      (reference "C4") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566e5fc3"
+      (reference "C5") (unit 1) (value "1000uF 50V D13 P5") (footprint "Capacitors_ThroughHole:C_Radial_D12.5_L25_P5")
+    )
+    (path "/00000000-0000-0000-0000-0000566e1fbe"
+      (reference "C6") (unit 1) (value "220nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566d61b2"
+      (reference "C7") (unit 1) (value "10nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566d652c"
+      (reference "C8") (unit 1) (value "10nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566e13db"
+      (reference "C9") (unit 1) (value "10nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566e2cf3"
+      (reference "C12") (unit 1) (value "10uF 50V X7R/S") (footprint "Capacitors_SMD:C_1210")
+    )
+    (path "/00000000-0000-0000-0000-0000567e6578"
+      (reference "C18") (unit 1) (value "10uF 50V X7R/S") (footprint "Capacitors_SMD:C_1210")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b006e"
+      (reference "C?") (unit 1) (value "10uF 50V X7R/S") (footprint "Capacitors_SMD:C_1210")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b007f"
+      (reference "C?") (unit 1) (value "10uF 50V X7R/S") (footprint "Capacitors_SMD:C_1210")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00df"
+      (reference "C?") (unit 1) (value "100uF 16V/S") (footprint "Capacitors_SMD:c_elec_6.3x5.3")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00f0"
+      (reference "C?") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0108"
+      (reference "C?") (unit 1) (value "470pF/S") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0110"
+      (reference "C?") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b01a4"
+      (reference "C?") (unit 1) (value "100uF 50V/S") (footprint "Capacitors_SMD:c_elec_10x10")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b100d"
+      (reference "C?") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1081"
+      (reference "C?") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566bf899"
+      (reference "CN1") (unit 1) (value "uNavBoard") (footprint "Katodo:uNavBoard")
+    )
+    (path "/00000000-0000-0000-0000-0000566bfaa5"
+      (reference "CN1") (unit 2) (value "uNavBoard") (footprint "Pin_Headers:Pin_Header_Straight_2x10")
+    )
+    (path "/00000000-0000-0000-0000-0000566cd59e"
+      (reference "D2") (unit 1) (value "LED_GRE/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce553"
+      (reference "D3") (unit 1) (value "LED_YEL/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce63c"
+      (reference "D4") (unit 1) (value "LED_GRE/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce651"
+      (reference "D5") (unit 1) (value "LED_YEL/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566e2186"
+      (reference "D6") (unit 1) (value "ES1G-E2") (footprint "Diodes_SMD:SMA_Standard")
+    )
+    (path "/00000000-0000-0000-0000-0000566e422a"
+      (reference "D7") (unit 1) (value "ES1G-E2") (footprint "Diodes_SMD:SMA_Standard")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0177"
+      (reference "D?") (unit 1) (value "B360A") (footprint "Diodes_SMD:SMA_Handsoldering")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b01bd"
+      (reference "D?") (unit 1) (value "S5G R6 ") (footprint "Diodes_SMD:DO-214AB")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1038"
+      (reference "D?") (unit 1) (value "LED_GRE/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1040"
+      (reference "D?") (unit 1) (value "LED_YEL/S") (footprint "LEDs:LED-0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1015"
+      (reference "FB?") (unit 1) (value "FERR100M2200OHM") (footprint "Resistors_SMD:R_0805_HandSoldering")
+    )
+    (path "/00000000-0000-0000-0000-0000566d0fb2"
+      (reference "H1") (unit 1) (value "HOLE-3.5") (footprint "Mounting_Holes:MountingHole_3-5mm")
+    )
+    (path "/00000000-0000-0000-0000-0000566d1588"
+      (reference "H2") (unit 1) (value "HOLE-3.5") (footprint "Mounting_Holes:MountingHole_3-5mm")
+    )
+    (path "/00000000-0000-0000-0000-0000566d15ff"
+      (reference "H3") (unit 1) (value "HOLE-3.5") (footprint "Mounting_Holes:MountingHole_3-5mm")
+    )
+    (path "/00000000-0000-0000-0000-0000566d1676"
+      (reference "H4") (unit 1) (value "HOLE-3.5") (footprint "Mounting_Holes:MountingHole_3-5mm")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00ca"
+      (reference "JP?") (unit 1) (value "JUMPER") (footprint "Measurement_Points:Test_Point_2Pads")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b015a"
+      (reference "JP?") (unit 1) (value "JUMPER") (footprint "Measurement_Points:Test_Point_2Pads")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0169"
+      (reference "L?") (unit 1) (value "XAL6060-103MEC") (footprint "Katodo:NRS6045T")
+    )
+    (path "/00000000-0000-0000-0000-0000566c17cd"
+      (reference "P2") (unit 1) (value "J2541406-R") (footprint "w_conn_kk100:kk100_22-23-2061")
+    )
+    (path "/00000000-0000-0000-0000-0000566c26e9"
+      (reference "P3") (unit 1) (value "J2541406-R") (footprint "w_conn_kk100:kk100_22-23-2061")
+    )
+    (path "/00000000-0000-0000-0000-0000566c3717"
+      (reference "P5") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-0000566c3ab6"
+      (reference "P6") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-0000566c4de3"
+      (reference "P7") (unit 1) (value "J2541402-R") (footprint "w_conn_kk100:kk100_22-23-2021")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5bd9"
+      (reference "P8") (unit 1) (value "J2541402-R") (footprint "w_conn_kk100:kk100_22-23-2021")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cca"
+      (reference "P9") (unit 1) (value "J2541402-R") (footprint "w_conn_kk100:kk100_22-23-2021")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cff"
+      (reference "P10") (unit 1) (value "J2541402-R") (footprint "w_conn_kk100:kk100_22-23-2021")
+    )
+    (path "/00000000-0000-0000-0000-0000566c9d5d"
+      (reference "P11") (unit 1) (value "MSTBV2.5/2G") (footprint "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol")
+    )
+    (path "/00000000-0000-0000-0000-0000566ca037"
+      (reference "P12") (unit 1) (value "MSTBV2.5/2G") (footprint "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol")
+    )
+    (path "/00000000-0000-0000-0000-0000566df41f"
+      (reference "P13") (unit 1) (value "MSTBV2.5/2G") (footprint "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol")
+    )
+    (path "/00000000-0000-0000-0000-0000566fb354"
+      (reference "P16") (unit 1) (value "J2541406-R") (footprint "w_conn_kk100:kk100_22-23-2061")
+    )
+    (path "/00000000-0000-0000-0000-0000566fb21c"
+      (reference "P17") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-00005670529e"
+      (reference "P18") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-0000567051cf"
+      (reference "P19") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-000056700e49"
+      (reference "P20") (unit 1) (value "J2541405-R") (footprint "w_conn_kk100:kk100_22-23-2051")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b008b"
+      (reference "P?") (unit 1) (value "MSTBV2.5/2G") (footprint "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00a4"
+      (reference "P?") (unit 1) (value "J2541402-R") (footprint "w_conn_kk100:kk100_22-23-2021")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b01b5"
+      (reference "P?") (unit 1) (value "CONN_02X01") (footprint "Pin_Headers:Pin_Header_Straight_2x01")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fae"
+      (reference "P?") (unit 1) (value "USB_B") (footprint "Connect:USB_B")
+    )
+    (path "/00000000-0000-0000-0000-000056d3cf98"
+      (reference "Q1") (unit 1) (value "STD10P6F6") (footprint "TO_SOT_Packages_SMD:TO-252-2Lead")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b009c"
+      (reference "Q?") (unit 1) (value "STD10P6F6") (footprint "TO_SOT_Packages_SMD:TO-252-2Lead")
+    )
+    (path "/00000000-0000-0000-0000-0000566c51c3"
+      (reference "R1") (unit 1) (value "ZENER 3V 2%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569ed584"
+      (reference "R2") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569f1cd2"
+      (reference "R3") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569f46cb"
+      (reference "R4") (unit 1) (value "100K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566c5cde"
+      (reference "R5") (unit 1) (value "ZENER 3V 2%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569ed6ea"
+      (reference "R6") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569f23c3"
+      (reference "R7") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569f4834"
+      (reference "R8") (unit 1) (value "100K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566cd6be"
+      (reference "R9") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce559"
+      (reference "R10") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce642"
+      (reference "R11") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566ce657"
+      (reference "R12") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566d5dab"
+      (reference "R13") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-000056aab1b6"
+      (reference "R14") (unit 1) (value "10K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566da725"
+      (reference "R15") (unit 1) (value "100K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566da7de"
+      (reference "R16") (unit 1) (value "100K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566e14ad"
+      (reference "R17") (unit 1) (value "100R/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000566d2dac"
+      (reference "R18") (unit 1) (value "0.1R 1W") (footprint "Resistors_SMD:R_2010_HandSoldering")
+    )
+    (path "/00000000-0000-0000-0000-0000566d39d1"
+      (reference "R19") (unit 1) (value "0.1R 1W") (footprint "Resistors_SMD:R_2010_HandSoldering")
+    )
+    (path "/00000000-0000-0000-0000-0000569f6536"
+      (reference "R23") (unit 1) (value "100R/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000569f71a6"
+      (reference "R24") (unit 1) (value "100R/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000568bd73f"
+      (reference "R33") (unit 1) (value "R") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000568be1b1"
+      (reference "R34") (unit 1) (value "R") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b00c2"
+      (reference "R?") (unit 1) (value "100K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0118"
+      (reference "R?") (unit 1) (value "15K/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0120"
+      (reference "R?") (unit 1) (value "220K/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b013d"
+      (reference "R?") (unit 1) (value "13K7/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0145"
+      (reference "R?") (unit 1) (value "137K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b0190"
+      (reference "R?") (unit 1) (value "17K4/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fee"
+      (reference "R?") (unit 1) (value "22R/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0ff6"
+      (reference "R?") (unit 1) (value "22R/S") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1048"
+      (reference "R?") (unit 1) (value "1K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1050"
+      (reference "R?") (unit 1) (value "1K/S 1%") (footprint "Resistors_SMD:R_0805")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b102a"
+      (reference "S?") (unit 1) (value "SW_DIP_x4") (footprint "w_switch:dip_4-300")
+    )
+    (path "/00000000-0000-0000-0000-0000566c0a3a"
+      (reference "U1") (unit 1) (value "L6205PD") (footprint "SO20POWER")
+    )
+    (path "/00000000-0000-0000-0000-0000576aaf5f/00000000-0000-0000-0000-0000576b012f"
+      (reference "U?") (unit 1) (value "MP4559DN") (footprint "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fb7"
+      (reference "U?") (unit 1) (value "FT230XS-R") (footprint "Housings_SSOP:SSOP-16_4.4x5.2mm_Pitch0.65mm")
+    )
+    (path "/00000000-0000-0000-0000-0000568c6821"
+      (reference "W1") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000568c69a5"
+      (reference "W2") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000568c6ae2"
+      (reference "W4") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000568c6c1e"
+      (reference "W5") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000568caf50"
+      (reference "W7") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fd7"
+      (reference "W?") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b0fde"
+      (reference "W?") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b106e"
+      (reference "W?") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+    (path "/00000000-0000-0000-0000-0000576b0a58/00000000-0000-0000-0000-0000576b1075"
+      (reference "W?") (unit 1) (value "TEST_1P") (footprint "Measurement_Points:Measurement_Point_Square-TH_Small")
+    )
+  )
+)
