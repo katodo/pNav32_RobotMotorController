@@ -1,0 +1,7 @@
+(version 1)
+
+(rule "GATE_Driver_U3"
+   (constraint clearance (min 0.08mm))
+   (constraint track_width (min 0.08mm))   
+   (condition "A.insideCourtyard('U3') && B.NetClass == '*'")
+)
