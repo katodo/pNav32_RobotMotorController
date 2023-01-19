@@ -2925,7 +2925,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_02x24_Odd_Even") (at 142.24 48.26 0) (unit 1)
-    (in_bom no) (on_board yes)
+    (in_bom yes) (on_board yes)
     (uuid 1f70d207-e63d-4692-be1f-5b6fa8599d57)
     (property "Reference" "J3" (id 0) (at 143.51 15.3502 0))
     (property "Value" "PinSocket_2x24_P2.54mm_Vertical" (id 1) (at 143.51 17.8871 0))
@@ -3667,7 +3667,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_02x24_Odd_Even") (at 50.8 48.26 0) (unit 1)
-    (in_bom no) (on_board yes) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e21aa84b-970e-47cf-b64f-3b55ee0e1b51)
     (property "Reference" "J2" (id 0) (at 52.07 15.3502 0))
     (property "Value" "PinSocket_2x24_P2.54mm_Vertical" (id 1) (at 52.07 17.8871 0))
