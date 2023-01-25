@@ -33,6 +33,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "globals.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +66,11 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern ADC_HandleTypeDef hadc1;
+extern DMA_HandleTypeDef hdma_adc1;
+
+
+//uint16_t adc_values[5];
 
 /* USER CODE END 0 */
 
@@ -128,6 +134,19 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  // Avvia la conversione con DMA
+
+
+//  if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)bufferAdcDma, 5) != HAL_OK)
+//  {
+//	  while (1)
+//	  {
+//
+//	  }
+//  }
+
+
   while (1)
   {
     /* USER CODE END WHILE */
@@ -183,6 +202,40 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
+/**
+  * @brief  Conversion complete callback in non blocking mode
+  * @param  hadc: ADC handle
+  * @note   This example shows a simple way to report end of conversion
+  *         and get conversion result. You can add your own implementation.
+  * @retval None
+  */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  /* Update status variable of DMA transfer */
+  //ubDmaTransferStatus = 1;
+
+  /* Set LED depending on DMA transfer status */
+  /* - Turn-on if DMA transfer is completed */
+  /* - Turn-off if DMA transfer is not completed */
+	dmaTransferComplete = 1;
+}
+
+/**
+  * @brief  Conversion DMA half-transfer callback in non blocking mode
+  * @note   This example shows a simple way to report end of conversion
+  *         and get conversion result. You can add your own implementation.
+  * @retval None
+  */
+void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  /* Set LED depending on DMA transfer status */
+  /* - Turn-on if DMA transfer is completed */
+  /* - Turn-off if DMA transfer is not completed */
+	dmaHalfTransferComplete=1;
+}
+
 
 /* USER CODE END 4 */
 

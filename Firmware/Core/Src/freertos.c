@@ -107,6 +107,18 @@ const osThreadAttr_t rosTaskCom_attributes = {
   .stack_size = sizeof(rosTaskComBuffer),
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for rosTaskAnalog */
+osThreadId_t rosTaskAnalogHandle;
+uint32_t rosTaskAnalogBuffer[ 256 ];
+osStaticThreadDef_t rosTaskAnalogControlBlock;
+const osThreadAttr_t rosTaskAnalog_attributes = {
+  .name = "rosTaskAnalog",
+  .cb_mem = &rosTaskAnalogControlBlock,
+  .cb_size = sizeof(rosTaskAnalogControlBlock),
+  .stack_mem = &rosTaskAnalogBuffer[0],
+  .stack_size = sizeof(rosTaskAnalogBuffer),
+  .priority = (osPriority_t) osPriorityLow,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -123,6 +135,7 @@ void * microros_zero_allocate(size_t number_of_elements, size_t size_of_element,
 
 void StartTaskLed(void *argument);
 void StartTaskCom(void *argument);
+void StartTaskAnalog(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -159,6 +172,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of rosTaskCom */
   rosTaskComHandle = osThreadNew(StartTaskCom, NULL, &rosTaskCom_attributes);
+
+  /* creation of rosTaskAnalog */
+  rosTaskAnalogHandle = osThreadNew(StartTaskAnalog, NULL, &rosTaskAnalog_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -297,6 +313,24 @@ void StartTaskCom(void *argument)
 	osDelay(100);
   }
   /* USER CODE END StartTaskCom */
+}
+
+/* USER CODE BEGIN Header_StartTaskAnalog */
+/**
+* @brief Function implementing the rosTaskAnalog thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskAnalog */
+void StartTaskAnalog(void *argument)
+{
+  /* USER CODE BEGIN StartTaskAnalog */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskAnalog */
 }
 
 /* Private application code --------------------------------------------------*/
