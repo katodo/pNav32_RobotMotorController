@@ -1950,6 +1950,11 @@
     )
   )
 
+  (text "ADC1_IN0" (at 86.36 176.53 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 8e3b5d8b-da09-4f43-8159-1e2195f98a7c)
+  )
+
   (label "O_MOT" (at 198.12 38.1 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 146da68d-e136-42cc-9281-2df07867efe7)

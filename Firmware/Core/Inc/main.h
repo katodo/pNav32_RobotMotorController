@@ -65,14 +65,10 @@ void Error_Handler(void);
 #define PC0_M1_CURRENT_GPIO_Port GPIOC
 #define PC1_M2_CURRENT_Pin GPIO_PIN_1
 #define PC1_M2_CURRENT_GPIO_Port GPIOC
-#define ADC_VREF_Pin GPIO_PIN_2
-#define ADC_VREF_GPIO_Port GPIOC
 #define PA0_MAIN_SUPPLY_Pin GPIO_PIN_0
 #define PA0_MAIN_SUPPLY_GPIO_Port GPIOA
 #define TIM_ENC2_B_Pin GPIO_PIN_1
 #define TIM_ENC2_B_GPIO_Port GPIOA
-#define ADC_TEMP_Pin GPIO_PIN_2
-#define ADC_TEMP_GPIO_Port GPIOA
 #define PA3_M1_V_Pin GPIO_PIN_3
 #define PA3_M1_V_GPIO_Port GPIOA
 #define PA4_M2_V_Pin GPIO_PIN_4

@@ -135,18 +135,6 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  // Avvia la conversione con DMA
-
-
-//  if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)bufferAdcDma, 5) != HAL_OK)
-//  {
-//	  while (1)
-//	  {
-//
-//	  }
-//  }
-
-
   while (1)
   {
     /* USER CODE END WHILE */

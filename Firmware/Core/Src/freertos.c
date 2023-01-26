@@ -25,6 +25,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "globals.h"
+
 #include <stdbool.h>
 #include <rcl/rcl.h>
 #include <rcl/error_handling.h>
@@ -328,7 +331,12 @@ void StartTaskAnalog(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+
+	  if(dmaTransferComplete == 1)
+	  {
+		  dmaTransferComplete = 0;
+		  osDelay(1);
+	  }
   }
   /* USER CODE END StartTaskAnalog */
 }
