@@ -47,6 +47,10 @@
 #include <control_msgs/msg/joint_jog.h>
 
 #include "usart.h"
+
+#include "motors.h"
+#include "encoder.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,7 +87,24 @@ std_msgs__msg__ColorRGBA msgColorRGBA;
 rcl_publisher_t publisher_batt;
 sensor_msgs__msg__BatteryState msgBattery;
 rosidl_runtime_c__float__Sequence battVoltage;
-const uint NUMBEROFFCELL = 6;
+const size_t NUMBEROFFCELL = 6;
+
+
+/* Leggi i dati dei due encoder */
+volatile int32_t pos1;
+volatile int32_t vel1;
+volatile int32_t pos2;
+volatile int32_t vel2;
+
+// Esempio di lettura diretta delle variabili globali
+volatile int32_t currentPos1;
+volatile int32_t currentVel1;    // ticks/ms (se calcolato in ENC_Update)
+volatile float   velocityTPS1; // ticks/s (se usi TIM3 in input capture)
+
+// Analogamente per ENCODER_2
+volatile int32_t currentPos2;
+volatile int32_t currentVel2;
+volatile float   velocityTPS2;
 
 /* USER CODE END Variables */
 /* Definitions for rosTaskLed */
@@ -122,6 +143,11 @@ const osThreadAttr_t rosTaskAnalog_attributes = {
   .stack_size = sizeof(rosTaskAnalogBuffer),
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for myTimer_1m */
+osTimerId_t myTimer_1mHandle;
+const osTimerAttr_t myTimer_1m_attributes = {
+  .name = "myTimer_1m"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -139,6 +165,7 @@ void * microros_zero_allocate(size_t number_of_elements, size_t size_of_element,
 void StartTaskLed(void *argument);
 void StartTaskCom(void *argument);
 void StartTaskAnalog(void *argument);
+void CallbackTimer_1m(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -160,6 +187,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
+
+  /* Create the timer(s) */
+  /* creation of myTimer_1m */
+  myTimer_1mHandle = osTimerNew(CallbackTimer_1m, osTimerPeriodic, NULL, &myTimer_1m_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
@@ -208,6 +239,16 @@ void StartTaskLed(void *argument)
 		osDelay(100);
 		HAL_GPIO_WritePin(O_LED_D2_GPIO_Port, O_LED_D2_Pin, 0);
 		osDelay(200);
+
+		// Esempio di lettura diretta delle variabili globali
+		currentPos1 = g_Encoder1.position;
+		currentVel1 = g_Encoder1.velocity;    // ticks/ms (se calcolato in ENC_Update)
+		velocityTPS1 = g_Encoder1.icVelocityTPS; // ticks/s (se usi TIM3 in input capture)
+
+		// Analogamente per ENCODER_2
+		currentPos2 = g_Encoder2.position;
+		currentVel2 = g_Encoder2.velocity;
+		velocityTPS2 = g_Encoder2.icVelocityTPS;
   }
   /* USER CODE END StartTaskLed */
 }
@@ -339,6 +380,14 @@ void StartTaskAnalog(void *argument)
 	  }
   }
   /* USER CODE END StartTaskAnalog */
+}
+
+/* CallbackTimer_1m function */
+void CallbackTimer_1m(void *argument)
+{
+  /* USER CODE BEGIN CallbackTimer_1m */
+
+  /* USER CODE END CallbackTimer_1m */
 }
 
 /* Private application code --------------------------------------------------*/

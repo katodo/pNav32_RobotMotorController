@@ -109,6 +109,10 @@ void Error_Handler(void);
 #define PD11_EXTI11_E1_IDX_GPIO_Port GPIOD
 #define PD12_EXTI12_E2_IDX_Pin GPIO_PIN_12
 #define PD12_EXTI12_E2_IDX_GPIO_Port GPIOD
+#define ENC2_A_SPEED_Pin GPIO_PIN_13
+#define ENC2_A_SPEED_GPIO_Port GPIOD
+#define ENC1_A_SPEED_Pin GPIO_PIN_6
+#define ENC1_A_SPEED_GPIO_Port GPIOC
 #define PC7_TIM8_MOT1_P_Pin GPIO_PIN_7
 #define PC7_TIM8_MOT1_P_GPIO_Port GPIOC
 #define PC8_TIM8_MOT2_P_Pin GPIO_PIN_8
@@ -135,6 +139,7 @@ void Error_Handler(void);
 #define O_PWR_REG_EN_GPIO_Port GPIOB
 #define TIM_AUX2_PWM_Pin GPIO_PIN_9
 #define TIM_AUX2_PWM_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

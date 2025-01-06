@@ -34,6 +34,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "globals.h"
+#include "motors.h"
+#include "encoder.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -72,6 +75,8 @@ extern DMA_HandleTypeDef hdma_adc1;
 
 //uint16_t adc_values[5];
 
+
+
 /* USER CODE END 0 */
 
 /**
@@ -80,6 +85,7 @@ extern DMA_HandleTypeDef hdma_adc1;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -102,12 +108,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM8_Init();
   MX_I2C2_Init();
   MX_SPI1_Init();
-  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_ADC1_Init();
   MX_ADC3_Init();
@@ -117,21 +123,40 @@ int main(void)
   MX_CRC_Init();
   MX_RNG_Init();
   MX_TIM14_Init();
-  MX_TIM9_Init();
   MX_CAN1_Init();
   MX_USART2_UART_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
+
+
+  HAL_TIM_Base_Start_IT(&htim5);
+
+  // 2) Avvia il PWM su TIM8
+  MotorControl_StartPWM();
+
+  // Imposta i motori inizialmente fermi ma enable=true
+  MotorControl_SetMotors(0.0f, 0.0f, true, true, false, false);
+
+
+  // Inizializza il modulo encoder (TIM1/TIM2, etc.)
+  ENC_Init();
+
+  // Inizializza TIM3/TIM4 (se stai usando anche input capture)
+  ENC_IC_Init();
 
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
+  osKernelInitialize();
+
+  /* Call init function for freertos objects (in cmsis_os2.c) */
   MX_FREERTOS_Init();
 
   /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
@@ -238,6 +263,11 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
+	if (htim->Instance == TIM5)
+	{
+		// Codice da eseguire ogni 1ms
+		ENC_Update();
+	}
 
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM10) {
