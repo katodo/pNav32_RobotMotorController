@@ -1,0 +1,5 @@
+../Core/Src/motors.c:12:6:MotorControl_StartPWM	1
+../Core/Src/motors.c:26:6:MotorControl_StopPWM	1
+../Core/Src/motors.c:41:6:MotorControl_SetMotors	5
+../Core/Src/motors.c:81:6:MotorControl_SetAux	1
+../Core/Src/motors.c:90:6:MotorControl_SetDeadTime	1

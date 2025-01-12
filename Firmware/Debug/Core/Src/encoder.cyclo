@@ -1,0 +1,9 @@
+../Core/Src/encoder.c:23:6:ENC_Init	1
+../Core/Src/encoder.c:50:6:ENC_Update	1
+../Core/Src/encoder.c:72:9:ENC_GetPosition	3
+../Core/Src/encoder.c:79:9:ENC_GetVelocity	3
+../Core/Src/encoder.c:86:6:ENC_Reset	3
+../Core/Src/encoder.c:115:6:ENC_IC_Init	1
+../Core/Src/encoder.c:130:7:ENC_GetVelocityTPS	3
+../Core/Src/encoder.c:142:13:ENC_IC_AdjustPrescaler	10
+../Core/Src/encoder.c:206:6:HAL_TIM_IC_CaptureCallback	11
