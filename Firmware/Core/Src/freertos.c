@@ -51,6 +51,7 @@
 
 #include <std_msgs/msg/int32.h>
 #include <std_msgs/msg/int64.h>
+#include <std_msgs/msg/u_int32.h>
 #include <std_msgs/msg/float64.h>
 #include <std_msgs/msg/color_rgba.h>
 #include <sensor_msgs/msg/battery_state.h>
@@ -88,17 +89,17 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN Variables */
 
 /* === Publisher e messaggi standard === */
-rcl_publisher_t publisher_int32;
-std_msgs__msg__Int32 msgInt32;
+//rcl_publisher_t publisher_int32;
+//std_msgs__msg__Int32 msgInt32;
 
-rcl_publisher_t publisher_int64;
-std_msgs__msg__Int64 msgInt64;
+//rcl_publisher_t publisher_int64;
+//std_msgs__msg__Int64 msgInt64;
 
 rcl_publisher_t publisher_temp;
 sensor_msgs__msg__Temperature msgTemperature;
 
-rcl_publisher_t publisher_color;
-std_msgs__msg__ColorRGBA msgColorRGBA;
+//rcl_publisher_t publisher_color;
+//std_msgs__msg__ColorRGBA msgColorRGBA;
 
 rcl_publisher_t publisher_batt;
 sensor_msgs__msg__BatteryState msgBattery;
@@ -110,38 +111,34 @@ rcl_publisher_t publisher_Enc1_pos1;
 std_msgs__msg__Int32   msg_Enc1_pos1;
 
 rcl_publisher_t publisher_Enc1_vel1;
-std_msgs__msg__Int32   msg_Enc1_vel1;
+std_msgs__msg__Float64 msg_Enc1_vel1; // Corretto in Float64
 
-rcl_publisher_t publisher_Enc1VelTPS;
-std_msgs__msg__Float64 msg_Enc1VelTPS;
 
 rcl_publisher_t publisher_Enc2_pos2;
 std_msgs__msg__Int32   msg_Enc2_pos2;
 
 rcl_publisher_t publisher_Enc2_vel2;
-std_msgs__msg__Int32   msg_Enc2_vel2;
+std_msgs__msg__Float64 msg_Enc2_vel2; // Corretto in Float64
 
-rcl_publisher_t publisher_Enc2VelTPS;
-std_msgs__msg__Float64 msg_Enc2VelTPS;
+/* === Publisher e messaggi per impulsi encoder === */
+rcl_publisher_t publisher_Enc1_impulse_time;
+std_msgs__msg__UInt32 msg_Enc1_impulse_time;
+
+rcl_publisher_t publisher_Enc2_impulse_time;
+std_msgs__msg__UInt32 msg_Enc2_impulse_time;
+
 
 /* === Variabili encoder reali (aggiornate altrove) === */
 volatile int32_t pos1;
-volatile int32_t vel1;
+volatile float vel1; // Modificato da int32_t a float
 volatile int32_t pos2;
-volatile int32_t vel2;
+volatile float vel2; // Modificato da int32_t a float
 
 /* === Subscriber al topic cmd_vel (Twist) === */
 rcl_subscription_t sub_cmdVel;
 geometry_msgs__msg__Twist msg_cmdVel;  // dati in arrivo
 
-/* === Timer a 1ms === */
-osTimerId_t myTimer_1mHandle;
-const osTimerAttr_t myTimer_1m_attributes = {
-  .name = "myTimer_1m"
-};
-
 /* USER CODE END Variables */
-
 /* Definitions for rosTaskLed */
 osThreadId_t rosTaskLedHandle;
 uint32_t rosTaskLedBuffer[ 512 ];
@@ -154,7 +151,6 @@ const osThreadAttr_t rosTaskLed_attributes = {
   .stack_size = sizeof(rosTaskLedBuffer),
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
-
 /* Definitions for rosTaskCom */
 osThreadId_t rosTaskComHandle;
 uint32_t rosTaskComBuffer[ 5000 ];
@@ -167,7 +163,6 @@ const osThreadAttr_t rosTaskCom_attributes = {
   .stack_size = sizeof(rosTaskComBuffer),
   .priority = (osPriority_t) osPriorityNormal,
 };
-
 /* Definitions for rosTaskAnalog */
 osThreadId_t rosTaskAnalogHandle;
 uint32_t rosTaskAnalogBuffer[ 256 ];
@@ -180,26 +175,13 @@ const osThreadAttr_t rosTaskAnalog_attributes = {
   .stack_size = sizeof(rosTaskAnalogBuffer),
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for myTimer_1m */
+osTimerId_t myTimer_1mHandle;
+const osTimerAttr_t myTimer_1m_attributes = {
+  .name = "myTimer_1m"
+};
 
 /* Private function prototypes -----------------------------------------------*/
-bool cubemx_transport_open(struct uxrCustomTransport * transport);
-bool cubemx_transport_close(struct uxrCustomTransport * transport);
-size_t cubemx_transport_write(struct uxrCustomTransport* transport, const uint8_t * buf, size_t len, uint8_t * err);
-size_t cubemx_transport_read(struct uxrCustomTransport* transport, uint8_t* buf, size_t len, int timeout, uint8_t* err);
-
-void * microros_allocate(size_t size, void * state);
-void microros_deallocate(void * pointer, void * state);
-void * microros_reallocate(void * pointer, size_t size, void * state);
-void * microros_zero_allocate(size_t number_of_elements, size_t size_of_element, void * state);
-
-void StartTaskLed(void *argument);
-void StartTaskCom(void *argument);
-void StartTaskAnalog(void *argument);
-void CallbackTimer_1m(void *argument);
-
-extern void MX_USB_DEVICE_Init(void);
-void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
-
 /* USER CODE BEGIN FunctionPrototypes */
 
 /**
@@ -237,15 +219,31 @@ static void cmdVelCallback(const void * msgin)
     MotorControl_SetMotors(speedM1, speedM2, true, true, false, false);
 }
 
+bool cubemx_transport_open(struct uxrCustomTransport * transport);
+bool cubemx_transport_close(struct uxrCustomTransport * transport);
+size_t cubemx_transport_write(struct uxrCustomTransport* transport, const uint8_t * buf, size_t len, uint8_t * err);
+size_t cubemx_transport_read(struct uxrCustomTransport* transport, uint8_t* buf, size_t len, int timeout, uint8_t* err);
+
+void * microros_allocate(size_t size, void * state);
+void microros_deallocate(void * pointer, void * state);
+void * microros_reallocate(void * pointer, size_t size, void * state);
+void * microros_zero_allocate(size_t number_of_elements, size_t size_of_element, void * state);
 /* USER CODE END FunctionPrototypes */
+
+void StartTaskLed(void *argument);
+void StartTaskCom(void *argument);
+void StartTaskAnalog(void *argument);
+void CallbackTimer_1m(void *argument);
+
+extern void MX_USB_DEVICE_Init(void);
+void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
   * @brief  FreeRTOS initialization
   * @param  None
   * @retval None
   */
-void MX_FREERTOS_Init(void)
-{
+void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
 
@@ -368,17 +366,17 @@ void StartTaskCom(void *argument)
    * 3) Creazione Publisher
    * ==========================================================================*/
   // Esempi: pInt32, pInt64, pBatt, pTemp, pColorRGBA, e i publisher encoder
-  rclc_publisher_init_default(&publisher_int32, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-    "pInt32");
-
-  rclc_publisher_init_default(&publisher_int64, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int64),
-    "pInt64");
-
-  rclc_publisher_init_default(&publisher_color, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, ColorRGBA),
-    "pColorRGBA");
+//  rclc_publisher_init_default(&publisher_int32, &node,
+//    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+//    "pInt32");
+//
+//  rclc_publisher_init_default(&publisher_int64, &node,
+//    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int64),
+//    "pInt64");
+//
+//  rclc_publisher_init_default(&publisher_color, &node,
+//    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, ColorRGBA),
+//    "pColorRGBA");
 
   rclc_publisher_init_default(&publisher_batt, &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, BatteryState),
@@ -388,18 +386,16 @@ void StartTaskCom(void *argument)
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Temperature),
     "pTemp");
 
+
+
   // Encoder 1
   rclc_publisher_init_default(&publisher_Enc1_pos1, &node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
     "Enc1Pos1");
 
   rclc_publisher_init_default(&publisher_Enc1_vel1, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-    "Enc1Vel1");
-
-  rclc_publisher_init_default(&publisher_Enc1VelTPS, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
-    "Enc1VelTPS");
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64), // Modificato in Float64
+      "Enc1Vel1");
 
   // Encoder 2
   rclc_publisher_init_default(&publisher_Enc2_pos2, &node,
@@ -407,12 +403,16 @@ void StartTaskCom(void *argument)
     "Enc2Pos2");
 
   rclc_publisher_init_default(&publisher_Enc2_vel2, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-    "Enc2Vel2");
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64), // Modificato in Float64
+      "Enc2Vel2");
 
-  rclc_publisher_init_default(&publisher_Enc2VelTPS, &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
-    "Enc2VelTPS");
+  rclc_publisher_init_default(&publisher_Enc1_impulse_time, &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, UInt32),
+      "Enc1ImpulseTime");
+
+  rclc_publisher_init_default(&publisher_Enc2_impulse_time, &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, UInt32),
+      "Enc2ImpulseTime");
 
   /* ===========================================================================
    * 4) Creazione Subscriber a cmd_vel
@@ -443,13 +443,13 @@ void StartTaskCom(void *argument)
   /* ===========================================================================
    * 6) Assegnazione valori iniziali per i messaggi standard
    * ==========================================================================*/
-  msgInt32.data = 1;
-  msgInt64.data = 10;
-
-  msgColorRGBA.r = 127;
-  msgColorRGBA.g = 127;
-  msgColorRGBA.b = 100;
-  msgColorRGBA.a = 200;
+//  msgInt32.data = 1;
+//  msgInt64.data = 10;
+//
+//  msgColorRGBA.r = 127;
+//  msgColorRGBA.g = 127;
+//  msgColorRGBA.b = 100;
+//  msgColorRGBA.a = 200;
 
   msgBattery.power_supply_status     = sensor_msgs__msg__BatteryState__POWER_SUPPLY_STATUS_UNKNOWN;
   msgBattery.power_supply_health     = sensor_msgs__msg__BatteryState__POWER_SUPPLY_HEALTH_UNKNOWN;
@@ -476,39 +476,52 @@ void StartTaskCom(void *argument)
   for(;;)
   {
     // Esempio di aggiornamento messaggi
-    msgInt32.data++;
-    msgInt64.data++;
-    msgColorRGBA.g++;
+//    msgInt32.data++;
+//    msgInt64.data++;
+//    msgColorRGBA.g++;
     msgBattery.voltage += 0.001f;
     msgTemperature.temperature += 0.001f;
 
-    // Encoder (pos1, vel1, pos2, vel2) aggiornati altrove
+    // Aggiorna messaggi encoder
     msg_Enc1_pos1.data  = g_Encoder1.position;
-    msg_Enc1_vel1.data  = g_Encoder1.velocity;
-    msg_Enc1VelTPS.data = (double)g_Encoder1.icVelocityTPS;
+    msg_Enc1_vel1.data  = g_Encoder1.velocity; // Usa il valore float
 
     msg_Enc2_pos2.data  = g_Encoder2.position;
-    msg_Enc2_vel2.data  = g_Encoder2.velocity;
-    msg_Enc2VelTPS.data = (double)g_Encoder2.icVelocityTPS;
+    msg_Enc2_vel2.data  = g_Encoder2.velocity; // Usa il valore float
+
+    msg_Enc1_impulse_time.data = g_Encoder1.impulse_time;
+    msg_Enc2_impulse_time.data = g_Encoder2.impulse_time;
 
     // LED D3 ON
     HAL_GPIO_WritePin(O_LED_D3_GPIO_Port, O_LED_D3_Pin, GPIO_PIN_RESET);
 
     // Pubblicazioni di esempio
     rcl_ret_t ret = RCL_RET_OK;
-    ret += rcl_publish(&publisher_int32, &msgInt32, NULL);
-    ret += rcl_publish(&publisher_int64, &msgInt64, NULL);
-    ret += rcl_publish(&publisher_color, &msgColorRGBA, NULL);
+//    ret += rcl_publish(&publisher_int32, &msgInt32, NULL);
+//    ret += rcl_publish(&publisher_int64, &msgInt64, NULL);
+//    ret += rcl_publish(&publisher_color, &msgColorRGBA, NULL);
     ret += rcl_publish(&publisher_batt, &msgBattery, NULL);
     ret += rcl_publish(&publisher_temp, &msgTemperature, NULL);
 
+    // Pubblica messaggi encoder
     ret += rcl_publish(&publisher_Enc1_pos1,  &msg_Enc1_pos1,  NULL);
     ret += rcl_publish(&publisher_Enc1_vel1,  &msg_Enc1_vel1,  NULL);
-    ret += rcl_publish(&publisher_Enc1VelTPS, &msg_Enc1VelTPS, NULL);
+    //ret += rcl_publish(&publisher_Enc1VelTPS, &msg_Enc1VelTPS, NULL);
 
     ret += rcl_publish(&publisher_Enc2_pos2,  &msg_Enc2_pos2,  NULL);
     ret += rcl_publish(&publisher_Enc2_vel2,  &msg_Enc2_vel2,  NULL);
-    ret += rcl_publish(&publisher_Enc2VelTPS, &msg_Enc2VelTPS, NULL);
+    //ret += rcl_publish(&publisher_Enc2VelTPS, &msg_Enc2VelTPS, NULL);
+
+    ret += rcl_publish(&publisher_Enc1_impulse_time, &msg_Enc1_impulse_time, NULL);
+    if (ret != RCL_RET_OK) {
+      printf("Error publishing Enc1ImpulseTime, ret = %ld\n", ret);
+    }
+
+    ret += rcl_publish(&publisher_Enc2_impulse_time, &msg_Enc2_impulse_time, NULL);
+    if (ret != RCL_RET_OK) {
+      printf("Error publishing Enc2ImpulseTime, ret = %ld\n", ret);
+    }
+
 
     if (ret != RCL_RET_OK)
     {
@@ -554,10 +567,11 @@ void CallbackTimer_1m(void *argument)
 {
   /* USER CODE BEGIN CallbackTimer_1m */
   // Codice eseguito ogni 1 ms
-	//ENC_Update();
+  //  ENC_Update();  // Aggiorna gli encoder ogni millisecondo
   /* USER CODE END CallbackTimer_1m */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 /* USER CODE END Application */
+

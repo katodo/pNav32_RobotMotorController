@@ -56,8 +56,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//osThreadId_t blink01Handle;
-//osThreadId_t blink02Handle;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,11 +70,6 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN 0 */
 extern ADC_HandleTypeDef hadc1;
 extern DMA_HandleTypeDef hdma_adc1;
-
-
-//uint16_t adc_values[5];
-
-
 
 /* USER CODE END 0 */
 
@@ -138,11 +132,8 @@ int main(void)
   MotorControl_SetMotors(0.0f, 0.0f, true, true, false, false);
 
 
-  // Inizializza il modulo encoder (TIM1/TIM2, etc.)
+  // Inizializza il modulo encoder
   ENC_Init();
-
-  // Inizializza TIM3/TIM4 (se stai usando anche input capture)
-  ENC_IC_Init();
 
   /* USER CODE END 2 */
 

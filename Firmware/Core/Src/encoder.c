@@ -1,262 +1,261 @@
-#include "encoder.h"
+/**
+  ******************************************************************************
+  * @file    encoder.c
+  * @brief   Gestione encoder con Timer in Input Capture (TIM3, TIM4)
+  *          e Timer in Encoder mode (TIM1, TIM2).
+  ******************************************************************************
+  */
 
-/* Handle generati da CubeMX (controlla i nomi nel tuo progetto) */
-extern TIM_HandleTypeDef htim1;
-extern TIM_HandleTypeDef htim2;
-extern TIM_HandleTypeDef htim3;
-extern TIM_HandleTypeDef htim4;
+#include "encoder.h"      // include del tuo header con EncoderData_t
+#include "stm32f4xx_hal.h"// per TIM_HandleTypeDef, HAL_TIM_xxx
+#include <math.h>         // per fabsf, se non già incluso
 
-/* Strutture globali per i due encoder */
-EncoderData_t g_Encoder1 = {0};
-EncoderData_t g_Encoder2 = {0};
+/* Dichiarazioni extern dei timer generati da CubeMX */
+extern TIM_HandleTypeDef htim1; // Encoder mode per Encoder 1
+extern TIM_HandleTypeDef htim2; // Encoder mode per Encoder 2
+extern TIM_HandleTypeDef htim3; // Input Capture per Encoder 1
+extern TIM_HandleTypeDef htim4; // Input Capture per Encoder 2
 
-/* Prescaler e frequenze per TIM3 e TIM4 (inizialmente prescaler = 0 e clock = 84MHz).
-   Se il tuo clock è differente, regola di conseguenza. */
-static uint32_t s_TIM3Prescaler = 0;
-static float    s_TIM3ClockFreq = 84000000.0f;  // es: 84 MHz di base (STM32F4)
-static uint32_t s_TIM4Prescaler = 0;
-static float    s_TIM4ClockFreq = 84000000.0f;
+/* =============================================================================
+ *  Costanti e macro (se non presenti altrove)
+ * =============================================================================
+ */
+#ifndef M_PI
+#define M_PI 3.14159265358979f
+#endif
 
-/* ==============================
- *  Funzioni per TIM1/TIM2
- * ============================== */
+#define VELOCITY_THRESHOLD  0.01f
+#define MAX_UINT16          65535
+#define TIMER_FREQ          84000000.0f   // esempio 84 MHz su STM32F4
+
+/* =============================================================================
+ *  Variabili Globali (se le dichiari in 'globals.c', togli la definizione qui!)
+ * =============================================================================
+ *
+ * Se già definite in un altro file .c, qui andranno come "extern".
+ *
+ * Di seguito un esempio se vuoi allocarle qui. Altrimenti, rimuovi e usa extern.
+ */
+/*
+EncoderData_t g_Encoder1;
+EncoderData_t g_Encoder2;
+*/
+
+/* =============================================================================
+ *  Implementazione delle funzioni
+ * =============================================================================
+ */
 void ENC_Init(void)
 {
-    /* Inizializzazione di Encoder1 */
-    g_Encoder1.position      = 0;
-    g_Encoder1.velocity      = 0;
-    g_Encoder1.lastCount     = 0;
-    g_Encoder1.lastPosition  = 0;
-    g_Encoder1.icLastCapture = 0;
-    g_Encoder1.icVelocityTPS = 0.0f;
+    /* ---------------- Encoder 1 ---------------- */
+    // Inizializza tutti i campi
+    g_Encoder1 = (EncoderData_t){
+        .cpr                = 400,
+        .rpm_max            = 3000,
+        .velocity           = 0.0f,
+        .position           = 0,
+        .position_radians   = 0.0f,
+        .capture_old        = 0,
+        .impulse_time       = 0,
+        .direction_capture  = 0,
+        .new_data           = false,
 
-    /* Inizializzazione di Encoder2 */
-    g_Encoder2.position      = 0;
-    g_Encoder2.velocity      = 0;
-    g_Encoder2.lastCount     = 0;
-    g_Encoder2.lastPosition  = 0;
-    g_Encoder2.icLastCapture = 0;
-    g_Encoder2.icVelocityTPS = 0.0f;
+        .timer_to_seconds   = 1.0f / TIMER_FREQ,
+        .count_to_rad       = (2.0f * M_PI) / 400.0f,
+        .ticks_to_rpm       = (60.0f * TIMER_FREQ) / 400.0f,
+        .velocity_limit     = 3000.0f * 2.0f
+    };
 
-    /* Avvio TIM1 e TIM2 in modalità Encoder (Quadrature) */
-    HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
-    HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+    /* ---------------- Encoder 2 ---------------- */
+    g_Encoder2 = (EncoderData_t){
+        .cpr                = 400,
+        .rpm_max            = 3000,
+        .velocity           = 0.0f,
+        .position           = 0,
+        .position_radians   = 0.0f,
+        .capture_old        = 0,
+        .impulse_time       = 0,
+        .direction_capture  = 0,
+        .new_data           = false,
 
-    /* Azzeriamo i contatori hardware */
-    __HAL_TIM_SET_COUNTER(&htim1, 0);
-    __HAL_TIM_SET_COUNTER(&htim2, 0);
-}
+        .timer_to_seconds   = 1.0f / TIMER_FREQ,
+        .count_to_rad       = (2.0f * M_PI) / 400.0f,
+        .ticks_to_rpm       = (60.0f * TIMER_FREQ) / 400.0f,
+        .velocity_limit     = 3000.0f * 2.0f
+    };
 
-void ENC_Update(void)
-{
-    /* === Encoder1 === */
-    uint16_t currentCount1 = __HAL_TIM_GET_COUNTER(&htim1);
-    int16_t delta1 = (int16_t)(currentCount1 - g_Encoder1.lastCount);
-    g_Encoder1.position += delta1;
-    g_Encoder1.lastCount = currentCount1;
-
-    /* Velocità in ticks/ms */
-    g_Encoder1.velocity = g_Encoder1.position - g_Encoder1.lastPosition;
-    g_Encoder1.lastPosition = g_Encoder1.position;
-
-    /* === Encoder2 === */
-    uint16_t currentCount2 = __HAL_TIM_GET_COUNTER(&htim2);
-    int16_t delta2 = (int16_t)(currentCount2 - g_Encoder2.lastCount);
-    g_Encoder2.position += delta2;
-    g_Encoder2.lastCount = currentCount2;
-
-    g_Encoder2.velocity = g_Encoder2.position - g_Encoder2.lastPosition;
-    g_Encoder2.lastPosition = g_Encoder2.position;
-}
-
-int32_t ENC_GetPosition(EncoderId_t id)
-{
-    if (id == ENCODER_1) return g_Encoder1.position;
-    else if (id == ENCODER_2) return g_Encoder2.position;
-    return 0;
-}
-
-int32_t ENC_GetVelocity(EncoderId_t id)
-{
-    if (id == ENCODER_1) return g_Encoder1.velocity;
-    else if (id == ENCODER_2) return g_Encoder2.velocity;
-    return 0;
-}
-
-void ENC_Reset(EncoderId_t id)
-{
-    if (id == ENCODER_1)
-    {
-        g_Encoder1.position      = 0;
-        g_Encoder1.velocity      = 0;
-        g_Encoder1.lastPosition  = 0;
-        g_Encoder1.lastCount     = 0;
-        g_Encoder1.icLastCapture = 0;
-        g_Encoder1.icVelocityTPS = 0.0f;
-        __HAL_TIM_SET_COUNTER(&htim1, 0);
+    /*
+     * Se vuoi abilitare un prescaler calcolato:
+     * (Attento: se commentato, i timer funzionano col prescaler impostato da CubeMX).
+     */
+    /*
+    float min_period_usec_1 = (60.0f * 1e6f) / (g_Encoder1.rpm_max * g_Encoder1.cpr);
+    uint32_t optimal_prescaler_1 = (uint32_t)((TIMER_FREQ * min_period_usec_1) / 1e6f);
+    if (optimal_prescaler_1 < 1) {
+        optimal_prescaler_1 = 1;
     }
-    else if (id == ENCODER_2)
-    {
-        g_Encoder2.position      = 0;
-        g_Encoder2.velocity      = 0;
-        g_Encoder2.lastPosition  = 0;
-        g_Encoder2.lastCount     = 0;
-        g_Encoder2.icLastCapture = 0;
-        g_Encoder2.icVelocityTPS = 0.0f;
-        __HAL_TIM_SET_COUNTER(&htim2, 0);
+    htim3.Init.Prescaler = optimal_prescaler_1 - 1;
+
+    float min_period_usec_2 = (60.0f * 1e6f) / (g_Encoder2.rpm_max * g_Encoder2.cpr);
+    uint32_t optimal_prescaler_2 = (uint32_t)((TIMER_FREQ * min_period_usec_2) / 1e6f);
+    if (optimal_prescaler_2 < 1) {
+        optimal_prescaler_2 = 1;
     }
-}
+    htim4.Init.Prescaler = optimal_prescaler_2 - 1;
 
-/* ==============================
- *  Funzioni per TIM3 / TIM4 IC
- * ============================== */
+    if (HAL_TIM_Base_Init(&htim3) != HAL_OK || HAL_TIM_Base_Init(&htim4) != HAL_OK)
+    {
+        // Gestione errore (possibile assert)
+    }
+    */
 
-/* Avvio TIM3_CH1 e TIM4_CH2 in input capture con interrupt. */
-void ENC_IC_Init(void)
-{
-    /* Valori iniziali di prescaler */
-    s_TIM3Prescaler = 0;
-    s_TIM3ClockFreq = 84000000.0f;
-
-    s_TIM4Prescaler = 0;
-    s_TIM4ClockFreq = 84000000.0f;
-
-    /* Avvio la cattura in interrupt su TIM3 e TIM4 */
+    // Avvia TIM3 e TIM4 in modalità Input Capture con interrupt
     HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1);
     HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_2);
+
+    // Avvia TIM1 e TIM2 in modalità Encoder
+    HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
+    HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
 }
 
-/* Restituisce la velocità in ticks/s (calcolata via input capture) */
-float ENC_GetVelocityTPS(EncoderId_t id)
+/**
+  * @brief  ISR di input capture: qui calcoliamo la durata dell'impulso
+  *         (tempo tra due fronti consecutivi).
+  * @param  htim: puntatore a TIM_HandleTypeDef che ha generato l'interrupt
+  */
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-    if (id == ENCODER_1) return g_Encoder1.icVelocityTPS;
-    else if (id == ENCODER_2) return g_Encoder2.icVelocityTPS;
-    return 0.0f;
-}
-
-/* ==============================
- *  Callback unica
- * ============================== */
-
-/* Funzione di supporto: cambio dinamico del prescaler */
-static void ENC_IC_AdjustPrescaler(
-    TIM_HandleTypeDef *htim,
-    uint32_t *pPrescaler,
-    float    *pClockFreq,
-    uint32_t  delta)
-{
-    /* Soglie di esempio: da regolare in base alla tua applicazione */
-    const uint32_t DELTA_TOO_SMALL = 10;      // soglia per ridurre prescaler (velocità altissima)
-    const uint32_t DELTA_TOO_LARGE = 30000;   // soglia per aumentare prescaler (velocità molto bassa)
-
-    uint32_t newPrescaler = *pPrescaler;
-
-    if (delta < DELTA_TOO_SMALL)
+    if (htim->Instance == TIM3) // Encoder 1
     {
-        /* Velocità troppo alta -> decrementa prescaler finché > 0 */
-        if (newPrescaler > 0)
+        // Lettura dell'ultimo valore di cattura
+        uint32_t capture_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
+
+        // Calcolo differenza con il capture precedente
+        if (g_Encoder1.capture_old != 0)
         {
-            newPrescaler--;
+            uint32_t delta_time;
+            if (capture_val >= g_Encoder1.capture_old)
+                delta_time = capture_val - g_Encoder1.capture_old;
+            else
+                delta_time = (MAX_UINT16 - g_Encoder1.capture_old) + capture_val;
+
+            // Salviamo la durata dell'impulso in impulse_time
+            g_Encoder1.impulse_time = delta_time;
+
+            // Leggiamo la direzione dal timer encoder
+            g_Encoder1.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim1)) ? -1 : 1;
+
+            // Segnaliamo che ci sono nuovi dati
+            g_Encoder1.new_data = true;
+        }
+
+        // Salviamo l'ultimo capture per la prossima volta
+        g_Encoder1.capture_old = capture_val;
+
+        // Aggiorna anche la posizione software
+        int16_t count_now = __HAL_TIM_GET_COUNTER(&htim1);
+        if (count_now != 0)
+        {
+            int16_t direction_hw = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim1)) ? -1 : 1;
+            g_Encoder1.position += direction_hw * count_now;
+            __HAL_TIM_SET_COUNTER(&htim1, 0);
         }
     }
-    else if (delta > DELTA_TOO_LARGE)
+    else if (htim->Instance == TIM4) // Encoder 2
     {
-        /* Velocità troppo bassa -> incrementa prescaler (se non al limite) */
-        if (newPrescaler < 0xFFFF)
+        uint32_t capture_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
+
+        if (g_Encoder2.capture_old != 0)
         {
-            newPrescaler++;
-        }
-    }
+            uint32_t delta_time;
+            if (capture_val >= g_Encoder2.capture_old)
+                delta_time = capture_val - g_Encoder2.capture_old;
+            else
+                delta_time = (MAX_UINT16 - g_Encoder2.capture_old) + capture_val;
 
-    /* Se il prescaler è cambiato, aggiorniamo il timer */
-    if (newPrescaler != *pPrescaler)
-    {
-        __HAL_TIM_DISABLE(htim);
-
-        htim->Init.Prescaler = newPrescaler;
-        __HAL_TIM_SET_PRESCALER(htim, newPrescaler);
-
-        if (HAL_TIM_Base_Init(htim) != HAL_OK)
-        {
-            /* Gestisci errore se necessario */
+            g_Encoder2.impulse_time = delta_time;
+            g_Encoder2.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)) ? -1 : 1;
+            g_Encoder2.new_data = true;
         }
 
-        /* Riavvio cattura (occhio: potremmo perdere un fronte durante la riconfigurazione) */
-        if (htim->Instance == TIM3)
-        {
-            HAL_TIM_IC_Start_IT(htim, TIM_CHANNEL_1);
-        }
-        else if (htim->Instance == TIM4)
-        {
-            HAL_TIM_IC_Start_IT(htim, TIM_CHANNEL_2);
-        }
+        g_Encoder2.capture_old = capture_val;
 
-        __HAL_TIM_ENABLE(htim);
-
-        /* Nuova freq timer = 84MHz / (prescaler+1) */
-        *pClockFreq = 84000000.0f / (float)(newPrescaler + 1);
-        *pPrescaler = newPrescaler;
+        int16_t count_now = __HAL_TIM_GET_COUNTER(&htim2);
+        if (count_now != 0)
+        {
+            int16_t direction_hw = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)) ? -1 : 1;
+            g_Encoder2.position += direction_hw * count_now;
+            __HAL_TIM_SET_COUNTER(&htim2, 0);
+        }
     }
 }
 
 /**
- * @brief Callback unica di input capture per TIM3 e TIM4.
- *        Verifica se si tratta di TIM3_CH1 o TIM4_CH2 e agisce di conseguenza.
- */
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+  * @brief  Funzione di aggiornamento periodico (ad es. chiamata ogni ms).
+  *         Converte impulse_time (tick) in velocità (RPM), esegue filtri e
+  *         calcola la posizione in radianti.
+  */
+void ENC_Update(void)
 {
-    /* === Se si tratta di TIM3_CH1 (Encoder1_CHA) === */
-    if ((htim->Instance == TIM3) && (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1))
+    /* ------------------- Encoder 1 ------------------- */
+    if (g_Encoder1.new_data)
     {
-        uint32_t capture = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-        if (g_Encoder1.icLastCapture != 0)
+        g_Encoder1.new_data = false;
+
+        float dt = (float)g_Encoder1.impulse_time; // dt è in tick di timer
+        if (dt > 0.0f)
         {
-            uint32_t delta = 0;
-            if (capture >= g_Encoder1.icLastCapture)
-                delta = capture - g_Encoder1.icLastCapture;
-            else
-                delta = (0x10000UL - g_Encoder1.icLastCapture) + capture;
+            // velocity = direction * (ticks_to_rpm / dt)
+            float new_velocity = g_Encoder1.direction_capture * (g_Encoder1.ticks_to_rpm / dt);
 
-            if (delta > 0)
+            if (fabsf(new_velocity) > g_Encoder1.velocity_limit)
             {
-                g_Encoder1.icVelocityTPS = (float)s_TIM3ClockFreq / (float)delta;
+                new_velocity = 0.0f;
             }
-            else
-            {
-                g_Encoder1.icVelocityTPS = 0.0f;
-            }
-
-            /* Esegui cambio dinamico del prescaler se necessario */
-            ENC_IC_AdjustPrescaler(htim, &s_TIM3Prescaler, &s_TIM3ClockFreq, delta);
+            g_Encoder1.velocity = new_velocity;
         }
-
-        g_Encoder1.icLastCapture = capture;
+        else
+        {
+            g_Encoder1.velocity = 0.0f;
+        }
     }
 
-    /* === Se si tratta di TIM4_CH2 (Encoder2_CHA) === */
-    else if ((htim->Instance == TIM4) && (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2))
+    // Filtro soglia minima
+    if (fabsf(g_Encoder1.velocity) < VELOCITY_THRESHOLD)
     {
-        uint32_t capture = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
-        if (g_Encoder2.icLastCapture != 0)
-        {
-            uint32_t delta = 0;
-            if (capture >= g_Encoder2.icLastCapture)
-                delta = capture - g_Encoder2.icLastCapture;
-            else
-                delta = (0x10000UL - g_Encoder2.icLastCapture) + capture;
-
-            if (delta > 0)
-            {
-                g_Encoder2.icVelocityTPS = (float)s_TIM4ClockFreq / (float)delta;
-            }
-            else
-            {
-                g_Encoder2.icVelocityTPS = 0.0f;
-            }
-
-            ENC_IC_AdjustPrescaler(htim, &s_TIM4Prescaler, &s_TIM4ClockFreq, delta);
-        }
-
-        g_Encoder2.icLastCapture = capture;
+        g_Encoder1.velocity = 0.0f;
     }
+
+    // Calcolo posizione in radianti
+    g_Encoder1.position_radians = g_Encoder1.position * g_Encoder1.count_to_rad;
+
+
+    /* ------------------- Encoder 2 ------------------- */
+    if (g_Encoder2.new_data)
+    {
+        g_Encoder2.new_data = false;
+
+        float dt = (float)g_Encoder2.impulse_time;
+        if (dt > 0.0f)
+        {
+            float new_velocity = g_Encoder2.direction_capture * (g_Encoder2.ticks_to_rpm / dt);
+
+            if (fabsf(new_velocity) > g_Encoder2.velocity_limit)
+            {
+                new_velocity = 0.0f;
+            }
+            g_Encoder2.velocity = new_velocity;
+        }
+        else
+        {
+            g_Encoder2.velocity = 0.0f;
+        }
+    }
+
+    if (fabsf(g_Encoder2.velocity) < VELOCITY_THRESHOLD)
+    {
+        g_Encoder2.velocity = 0.0f;
+    }
+
+    g_Encoder2.position_radians = g_Encoder2.position * g_Encoder2.count_to_rad;
 }

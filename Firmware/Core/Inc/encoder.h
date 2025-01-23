@@ -5,50 +5,65 @@
 extern "C" {
 #endif
 
-#include "main.h"
 #include <stdint.h>
+#include <stdbool.h>   // Necessario per il tipo bool
+#include <math.h>      // Per M_PI (se disponibile in toolchain)
+
+/* Se M_PI non fosse definito dalla toolchain, puoi forzarlo:
+#ifndef M_PI
+#define M_PI 3.14159265358979f
+#endif
+*/
+
+/* Costanti principali */
+#define VELOCITY_THRESHOLD  0.01f           // Soglia minima per velocità
+#define MAX_UINT16          65535           // Timer 16 bit
+#define TIMER_FREQ          84000000.0f     // Frequenza base del timer (es: 84 MHz su STM32F4)
 
 /**
- * @brief Struttura che contiene i dati di posizione e velocità per ogni encoder.
+ * Struttura dati per un singolo encoder.
  */
 typedef struct
 {
-    /* Dati da TIM1/TIM2 (encoder quadratura) */
-    int32_t position;      /**< Posizione a 32 bit (conteggio esteso). */
-    int32_t velocity;      /**< Velocità calcolata in ENC_Update (ticks/ms). */
+    /* Parametri iniziali */
+    uint32_t cpr;
+    float    rpm_max;
 
-    uint16_t lastCount;    /**< Ultimo valore CNT a 16 bit per gestione overflow. */
-    int32_t  lastPosition; /**< Usato per il calcolo di velocity a 1ms. */
+    /* Variabili di lavoro */
+    float    velocity;         // Velocità in RPM
+    int32_t  position;         // Posizione in "tick"
+    float    position_radians; // Posizione in radianti
 
-    /* Dati da TIM3/TIM4 in input capture */
-    uint32_t icLastCapture;  /**< Ultima lettura CCR (cattura). */
-    float    icVelocityTPS;  /**< Velocità in ticks/s (calcolata con input capture). */
+    /* Per gestire Input Capture */
+    uint32_t capture_old;      // Valore "old" del timer (lettura precedente)
+    uint32_t impulse_time;     // Durata dell'impulso in tick
+    int16_t  direction_capture;
+    bool     new_data;
+
+    /* Precalcoli */
+    float timer_to_seconds;
+    float count_to_rad;
+    float ticks_to_rpm;
+    float velocity_limit;
 
 } EncoderData_t;
 
-typedef enum
-{
-    ENCODER_1 = 0,
-    ENCODER_2
-} EncoderId_t;
 
-/* Variabili globali (istanze per i 2 encoder) */
-extern EncoderData_t g_Encoder1;
-extern EncoderData_t g_Encoder2;
+/* Variabili globali (dichiarate in encoder.c con extern qui) */
+extern volatile EncoderData_t g_Encoder1;
+extern volatile EncoderData_t g_Encoder2;
 
-/* --- TIM1/TIM2 in quadratura --- */
+
+/* Prototipi delle funzioni */
 void ENC_Init(void);
-void ENC_Update(void);  /* Da richiamare a 1ms per aggiornare posizione e velocity (ticks/ms). */
-int32_t ENC_GetPosition(EncoderId_t id);
-int32_t ENC_GetVelocity(EncoderId_t id);
-void ENC_Reset(EncoderId_t id);
+void ENC_Update(void);
 
-/* --- TIM3/TIM4 in input capture --- */
-void ENC_IC_Init(void);
-float ENC_GetVelocityTPS(EncoderId_t id);
-
-/* --- Callback unica HAL per input capture (TIM3 & TIM4) --- */
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
+/*
+ * La callback di Input Capture è già definita dal framework HAL con la firma:
+ *   void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
+ * Quindi non serve ridefinirla qui se non come "extern", se preferisci:
+ */
+//void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
 
 #ifdef __cplusplus
 }
