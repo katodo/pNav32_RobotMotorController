@@ -127,32 +127,23 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM3) // Encoder 1
     {
-        // Lettura dell'ultimo valore di cattura
+        // Legge il valore attuale di cattura
         uint32_t capture_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
 
-        // Calcolo differenza con il capture precedente
-        if (g_Encoder1.capture_old != 0)
-        {
-            uint32_t delta_time;
-            if (capture_val >= g_Encoder1.capture_old)
-                delta_time = capture_val - g_Encoder1.capture_old;
-            else
-                delta_time = (MAX_UINT16 - g_Encoder1.capture_old) + capture_val;
+        // Ora capture_val rappresenta già il tempo passato dall’ultimo fronte,
+        // purché azzeriamo il contatore subito dopo aver letto.
+        g_Encoder1.impulse_time = capture_val;
 
-            // Salviamo la durata dell'impulso in impulse_time
-            g_Encoder1.impulse_time = delta_time;
+        // Direzione dal timer in encoder mode (TIM1 in hardware encoder)
+        g_Encoder1.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim1)) ? -1 : 1;
 
-            // Leggiamo la direzione dal timer encoder
-            g_Encoder1.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim1)) ? -1 : 1;
+        // Segnaliamo che ci sono nuovi dati
+        g_Encoder1.new_data = true;
 
-            // Segnaliamo che ci sono nuovi dati
-            g_Encoder1.new_data = true;
-        }
+        // Azzeriamo il contatore di TIM3, così riparte da 0 per il prossimo fronte
+        __HAL_TIM_SET_COUNTER(htim, 0);
 
-        // Salviamo l'ultimo capture per la prossima volta
-        g_Encoder1.capture_old = capture_val;
-
-        // Aggiorna anche la posizione software
+        // Aggiorna anche la posizione software leggendola dal TIM1
         int16_t count_now = __HAL_TIM_GET_COUNTER(&htim1);
         if (count_now != 0)
         {
@@ -165,20 +156,11 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
     {
         uint32_t capture_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
 
-        if (g_Encoder2.capture_old != 0)
-        {
-            uint32_t delta_time;
-            if (capture_val >= g_Encoder2.capture_old)
-                delta_time = capture_val - g_Encoder2.capture_old;
-            else
-                delta_time = (MAX_UINT16 - g_Encoder2.capture_old) + capture_val;
+        g_Encoder2.impulse_time = capture_val;
+        g_Encoder2.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)) ? -1 : 1;
+        g_Encoder2.new_data = true;
 
-            g_Encoder2.impulse_time = delta_time;
-            g_Encoder2.direction_capture = (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)) ? -1 : 1;
-            g_Encoder2.new_data = true;
-        }
-
-        g_Encoder2.capture_old = capture_val;
+        __HAL_TIM_SET_COUNTER(htim, 0);  // azzera il contatore di TIM4
 
         int16_t count_now = __HAL_TIM_GET_COUNTER(&htim2);
         if (count_now != 0)
@@ -189,6 +171,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
         }
     }
 }
+
 
 /**
   * @brief  Funzione di aggiornamento periodico (ad es. chiamata ogni ms).
@@ -202,12 +185,14 @@ void ENC_Update(void)
     {
         g_Encoder1.new_data = false;
 
-        float dt = (float)g_Encoder1.impulse_time; // dt è in tick di timer
+        // L'impulso è direttamente il conteggio letto dall'Input Capture
+        float dt = (float)g_Encoder1.impulse_time;
         if (dt > 0.0f)
         {
             // velocity = direction * (ticks_to_rpm / dt)
             float new_velocity = g_Encoder1.direction_capture * (g_Encoder1.ticks_to_rpm / dt);
 
+            // Limite massimo di velocità
             if (fabsf(new_velocity) > g_Encoder1.velocity_limit)
             {
                 new_velocity = 0.0f;
@@ -216,6 +201,7 @@ void ENC_Update(void)
         }
         else
         {
+            // Se dt fosse 0 (o molto piccolo), evitiamo divisione
             g_Encoder1.velocity = 0.0f;
         }
     }
@@ -226,7 +212,7 @@ void ENC_Update(void)
         g_Encoder1.velocity = 0.0f;
     }
 
-    // Calcolo posizione in radianti
+    // Calcolo della posizione in radianti
     g_Encoder1.position_radians = g_Encoder1.position * g_Encoder1.count_to_rad;
 
 
@@ -259,3 +245,4 @@ void ENC_Update(void)
 
     g_Encoder2.position_radians = g_Encoder2.position * g_Encoder2.count_to_rad;
 }
+
